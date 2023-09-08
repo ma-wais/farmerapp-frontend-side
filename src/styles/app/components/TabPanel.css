@@ -1,0 +1,10 @@
+/* Add CSS Transitions for TabPanel Content */
+div[role="tabpanel"] {
+    padding-top: 40px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+div[role="tabpanel"]:not([hidden]) {
+    opacity: 1;
+}

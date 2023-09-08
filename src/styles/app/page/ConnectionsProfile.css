@@ -1,0 +1,130 @@
+.profileBG {
+    z-index: -99;
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.profileBG>img {
+    width: 100%;
+    border-radius: 0px 0px 1em 1em;
+}
+
+.profileContainer {
+    bottom: -70px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    text-align: center;
+}
+
+.userProfile {
+    padding: 2px;
+    width: 110px;
+    height: 110px;
+    overflow: hidden;
+    border: 2px solid #CA9A62;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.userProfile img {
+    width: 100%;
+    height: 100%;
+}
+
+.profileContainer .userName {
+    margin-top: 9px;
+    color: #2C4364;
+    font-family: Manrope;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.4px;
+}
+
+.accountDetails {
+    display: flex;
+    align-items: center;
+}
+
+.accountDetails .heading {
+    color: #2C4364;
+    font-family: Manrope;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.4px;
+}
+
+.accountDetails .heading+p {
+    color: #838FA0;
+    font-family: Manrope;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.32px;
+}
+
+.accountDetails>div {
+    flex: 1;
+    position: relative;
+}
+
+.accountDetails>div::after {
+    top: 50%;
+    right: 0;
+    z-index: 999;
+    content: '';
+    width: 1px;
+    height: 60%;
+    position: absolute;
+    background-color: #E9EFF1;
+    transform: translateY(-50%);
+}
+
+.accountDetails>div:last-child::after {
+    display: none;
+}
+
+.buttonSection {
+    display: flex;
+    gap: 1em;
+    margin-top: 35px;
+}
+
+.buttonSection .btn:first-child {
+    flex: 1;
+}
+
+.buttonSection .btn:last-child {
+    flex: 1 / 2;
+    display: inline-flex;
+}
+
+.categoriesList {
+    max-width: 100%;
+    margin: 28px 0;
+    gap: 23px;
+    display: flex;
+    align-items: center;
+    overflow-x: scroll;
+}
+.categoriesList::-webkit-scrollbar{
+    width: 0;
+}
+
+.categoriesList .bage {
+    color: #000 !important;
+    text-align: center;
+    font-size: 12px;
+    white-space: nowrap;
+    border-radius: 1em;
+}
+.categoriesList .bage.primary {
+    background-color: #F7F0E8;
+}

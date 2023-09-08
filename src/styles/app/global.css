@@ -1,0 +1,191 @@
+* {
+    font-family: "Manrope" !important;
+}
+
+.appPage {
+    min-height: 100vh;
+    padding: 1em;
+    padding-top: 2em;
+    display: flex;
+    flex-direction: column;
+}
+
+.appPage .heading {
+    color: #2C4364;
+    font-style: normal;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.appPage p {
+    color: #838FA0;
+    font-family: Manrope;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    /* 171.429% */
+}
+
+.appPage .list {
+    gap: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.appPage .list.bordered li {
+    border: 1px solid #EAECF0;
+}
+
+.appPage .list li {
+    gap: .5em;
+    padding: 1.2em;
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+    background: var(--white-500, #FFF);
+    box-shadow: 0px 12px 60px 0px rgba(93, 105, 118, 0.10);
+}
+
+.appPage .list.radioList li input[type='radio'] {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: block;
+    position: absolute;
+}
+
+.appPage .list.radioList li input[type='radio']~.checkmark {
+    display: none;
+}
+
+.appPage .list.radioList li input[type='radio']:checked~.checkmark {
+    display: unset;
+}
+
+/* .appPage .list li > div{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+} */
+
+.appPage .list .bage {
+    color: #FFF;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.2px;
+}
+
+.appPage .btn {
+    padding: 1em;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    font-family: "Manrope";
+}
+
+
+.appPage .btn.primary {
+    color: white;
+    border-radius: 12px;
+    background: #CA9B64;
+    box-shadow: 0px 27px 62px 0px rgba(141, 155, 170, 0.05);
+}
+.appPage .btn.outline{
+    background-color: transparent;
+}
+.appPage .btn.outline.primary{
+    border: 2px solid #C89963;
+}
+
+.appPage .btn.block {
+    width: 100%;
+    display: block;
+}
+
+.appPage .bottomSheet {
+    padding: 1.2em 1em;
+    background: #FFF;
+    border-radius: 20px 20px 0px 0px;
+    box-shadow: 0px 10px 100px 0px rgba(85, 94, 104, 0.20);
+}
+
+.appPage .tabs {
+    height: 56px;
+    display: flex;
+    align-items: center;
+    padding: 6px;
+    margin-bottom: 40px;
+    border-radius: 12px;
+    background: var(--rhino-dark-50, #EAECF0);
+}
+
+.appPage .tabs a {
+    width: 50%;
+    height: 100%;
+    color: #2C4364;
+    font-weight: 400;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    justify-content: center;
+    box-shadow: 0px 26px 60px 0px rgba(141, 155, 170, 0.15);
+}
+
+.appPage .tabs a.active {
+    font-weight: 600;
+    background-color: #FFF;
+}
+
+.appPage .fab {
+    position: fixed;
+    right: 19px;
+    bottom: 113px;
+}
+
+.appPage .rounded0,
+.appPage .rounded0 li {
+    border-radius: 0px !important;
+}
+
+.appPage .borderBottom1 {
+    border-bottom: 1px solid #EFF2F6;
+}
+
+.appPage .shadowNone,
+.appPage .shadowNone li {
+    box-shadow: none !important;
+}
+
+.appPage .avatar {
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.appPage .avatar img {
+    height: 100%;
+    width: 100%;
+}
+
+.appPage .bage {
+    padding: 5px 9px;
+}
+
+.appPage .bage.primary {
+    background-color: #C89963;
+    color: #FFF;
+}
+
+.appPage .rounded {
+    border-radius: 50px;
+}

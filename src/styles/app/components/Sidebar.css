@@ -1,0 +1,79 @@
+.sidebar {
+    z-index: 999;
+    top: 0;
+    left: -100vw;
+    padding: 1.2em;
+    position: absolute;
+    min-width: 85vw;
+    min-height: 100vh;
+    background: #FFF;
+    box-shadow: 0px 4px 14px 0px rgba(164, 164, 164, 0.25);
+    transition: all 200ms ease-in-out;
+}
+.sidebar.show{
+    left: 0;
+}
+
+.sidebar .profile {
+    margin-top: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.048);
+    border-radius: 1em;
+}
+.sidebar .navLinks {
+    /* max-height: 72vh;
+    overflow-y: scroll; */
+    padding-bottom: 2em;
+}
+
+.sidebar .profile>div p {
+    color: #27364E;
+    font-family: Manrope;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.18px;
+}
+
+.sidebar .profile>div p+div {
+    color: #838FA0;
+    font-family: Manrope;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.1px;
+}
+
+.sidebar .profile,
+.sidebar .navLinks a {
+    gap: 1em;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+
+    text-decoration: none;
+    color: #2C4364;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.sidebar .profile .img,
+.sidebar .navLinks a .icon {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.sidebar .profile .img img,
+.sidebar .navLinks a .icon img {
+    width: 100%;
+    height: 100%;
+}
+
+.sidebar .profile .img {
+    border-radius: 40px;
+    overflow: hidden;
+    background-color: red;
+}

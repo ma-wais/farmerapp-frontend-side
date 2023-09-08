@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Sans+3:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+
+:root {
+  --background-color-0: #ffffff;
+  --background-color-2: #f8f8f8;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  color: var(--text-50, #939393);
+  font-family: "Poppins";
+  font-size: 0.85em;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  overflow-x: hidden;
+}
+.layout {
+  display: flex;
+}
+.flex {
+  width: 100%;
+  display: flex;
+}
+.flexColumn {
+  flex-direction: column;
+}
+.flexRow {
+  flex-direction: row !important;
+}
+
+.itemsCenter {
+  align-items: center;
+}
+
+.itemsEnd {
+  align-items: end;
+}
+
+.contentCenter {
+  justify-content: center;
+}
+
+.contentBetween {
+  justify-content: space-between;
+}
+
+.msAuto {
+  margin-left: auto;
+}
+
+.meAuto {
+  margin-right: auto;
+}
+
+.mtAuto {
+  margin-top: auto;
+}
+.bgWhite {
+  background-color: white;
+}
+.mbAuto {
+  margin-bottom: auto;
+}
+
+.mxAuto {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.myAuto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.p40{
+  padding-top: 40px;
+}
+.p20{
+  padding-top: 20px;
+}
+.pl20{
+  padding-left: 20px;
+}
+.m20{
+  margin-top: 20px;
+}
+.m40{
+  margin-top: 40px;
+}
+.textCenter {
+  text-align: center;
+}
+.textEnd {
+  text-align: end;
+}
+.textStart {
+  text-align: start;
+}
+.positionBottom {
+  left: 0;
+  bottom: 20px;
+  position: absolute;
+}
+
+.positionVCenter {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.w95 {
+  width: 95%;
+}
+
+.disable {
+  opacity: 0.7;
+  cursor: not-allowed;
+  user-select: none;
+}
+
+.textMD {
+  color: #27364e;
+  font-size: 18px !important;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+.textSM {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.textDark {
+  color: #27364e !important;
+}
+
+.textPrimary {
+  color: #c39761;
+}
+
+.fwMedium {
+  font-weight: 600;
+}
+.gap1 {
+  gap: 16px !important;
+}
+::-webkit-scrollbar {
+  display: none;
+}

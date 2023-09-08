@@ -1,0 +1,49 @@
+.cover {
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.20);
+    backdrop-filter: blur(1.5px);
+}
+
+.bottomSheet {
+    z-index: 99;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+    min-height: 50vh;
+    box-shadow: none !important;
+    padding: 0 !important;
+    border-radius: 12px 12px 0px 0px;
+    transition: all 200ms linear;
+}
+
+.bottomSheet .dragArea {
+    transform: translateX( calc(50vw - 40px) );
+    height: 6px;
+    width: 80px;
+    border-radius: 9px;
+    margin-top: 7px;
+    background: #E4E4E4;
+    cursor: pointer;
+}
+
+.bottomSheet .header{
+    padding-bottom: 9px !important;
+    border-bottom: 1px solid #E4E4E4;;
+}
+
+.bottomSheet .header, 
+.bottomSheet .content{
+    padding: 19px 24px;
+} 
+.bottomSheet .content{
+    padding-top: 0;
+}
+
+.bottomSheet.expend{
+    min-height: 95vh;
+}

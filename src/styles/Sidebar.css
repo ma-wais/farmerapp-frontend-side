@@ -1,0 +1,78 @@
+.sidebar {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  background: var(--background-color-2, #f8f8f8);
+  padding: 1.5em 0;
+  min-height: 100vh;
+  position: relative;
+  transition: width 200ms linear;
+}
+.sidebar .sidebarHeader {
+  text-align: center;
+}
+.sidebar .sidebarHeader img {
+  width: 65%;
+}
+.sidebar .sidebarMenu {
+  padding-top: 3em;
+}
+.sidebar .sidebarMenu .sidebarLink {
+  gap: 1em;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 2em;
+  text-decoration: none;
+  text-transform: capitalize;
+  color: #939393;
+  font-weight: 400;
+  font-size: 0.9em;
+  margin-bottom: 1.8em;
+  transition: opacity 150ms linear;
+}
+.sidebar .sidebarMenu .sidebarLink img {
+  width: 1.5em;
+}
+
+.sidebar .sidebarMenu .sidebarLink.active {
+  color: #ca9b64;
+  font-weight: 600;
+  position: relative;
+}
+.sidebar .sidebarMenu .sidebarLink.active::after {
+  content: "";
+  left: 0;
+  position: absolute;
+  width: 5px;
+  height: 100%;
+  flex-shrink: 0;
+  background: #ca9b64;
+}
+.sidebar .toggler {
+  right: -15px;
+  position: absolute;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 150ms linear ;
+}
+.sidebar .toggler img {
+  padding: 10px 13px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+
+.sidebar:hover .toggler{
+  opacity: 1;
+}
+
+.sidebar.collapsed {
+  width: 70px;
+}
+.sidebar.collapsed .sidebarMenu .sidebarLink span{
+  opacity: 0;
+}
+.sidebar.collapsed .toggler{
+  transform: rotateZ(180deg);
+}

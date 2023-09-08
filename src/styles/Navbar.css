@@ -1,0 +1,24 @@
+.navbar {
+  padding: 1.5em 3em;
+  border-bottom: 1px solid var(--stroke, #e2e2e2);
+  background: var(--background-color-0, #fff);
+}
+.navbar .content {
+  display: flex;
+}
+.navbar .content .searchBar {
+    gap: .8em;
+  display: flex;
+}
+.navbar .content .searchBar input {
+  border: none;
+  outline: none;
+}
+.navbar .content .searchBar input::placeholder {
+  color: var(--text-50, #939393);
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

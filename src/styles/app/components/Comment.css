@@ -1,0 +1,53 @@
+.comment {
+    gap: 1em;
+    display: flex;
+    border-bottom: 1px solid #838FA01A;
+    padding: 20px 0;
+}
+
+.comment .img {
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.comment .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.comment .content {
+    width: 100%;
+    padding: 0;
+}
+.comment .content > div:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.comment .content .time {
+    margin-left: 10px;
+    color: #A5A5A5;
+    font-family: Manrope;
+    font-size: 11.908px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.comment .reply{
+    cursor: pointer;
+}
+.comment .reply .replies{
+    height: 0;
+    overflow: hidden;
+    padding-left: 16px;
+    transition: 200ms all linear;
+}
+.comment .reply .replies.show{
+    height: unset;
+}

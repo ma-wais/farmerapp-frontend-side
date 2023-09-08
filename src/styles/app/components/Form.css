@@ -1,0 +1,27 @@
+.input,
+.select {
+    width: 100%;
+}
+
+.input input,
+.select select {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+
+    color: var(--rhino-dark-500-main, #2C4364);
+    font-family: Manrope;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.input label,
+.select label {
+    display: block;
+    color: var(--rhino-dark-200, #ADB4C0);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+}

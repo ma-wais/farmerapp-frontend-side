@@ -1,0 +1,26 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 28px;
+}
+
+.navbar .left {
+    gap: 20px;
+    display: inline-flex;
+    align-items: start;
+}
+
+.navbar .wallet {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    color: #2C4364;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.navbar .wallet img {
+    width: 23px;
+}
