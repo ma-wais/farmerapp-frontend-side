@@ -88,6 +88,9 @@ body {
 .m20{
   margin-top: 20px;
 }
+.ml20{
+  margin-left: 20px;
+}
 .m40{
   margin-top: 40px;
 }
@@ -150,4 +153,10 @@ body {
 }
 ::-webkit-scrollbar {
   display: none;
+}
+.heading {
+  color: #2C4364;
+  font-style: normal;
+  font-size: 24px;
+  font-weight: 600;
 }

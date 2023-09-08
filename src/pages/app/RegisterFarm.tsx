@@ -14,13 +14,13 @@ import Tomato from '../../assets/img/advisory/tomato 4.png'
 import { NavLink } from 'react-router-dom';
 
 const RegisterFarm: React.FC = () => {
-  const [selectedCrops, setSelectedCrops] = useState<string[]>([]);
+    const [selectedCrop, setSelectedCrop] = useState<string | null>(null);
 
   const crops = [
     { name: 'Tomato', image: Tomato },
     { name: 'Brinjal', image: eggPlant },
     { name: 'Capsicum', image: YChill },
-    { name: 'Capsicum', image: Capsicum },
+    { name: 'Capsicum2', image: Capsicum },
     { name: 'Cocumber', image: Cocumber },
     { name: 'Mango', image: Mango },
     { name: 'Carrot', image: Carrot },
@@ -28,24 +28,18 @@ const RegisterFarm: React.FC = () => {
     { name: 'Radish', image: Radish },
   ];
   const toggleCropSelection = (cropName: string) => {
-    if (selectedCrops.includes(cropName)) {
-      setSelectedCrops(selectedCrops.filter((selectedCrop) => selectedCrop !== cropName));
-    } else {
-      setSelectedCrops([...selectedCrops, cropName]);
-    }
+    setSelectedCrop(selectedCrop === cropName ? null : cropName);
   };
+
   return (
     <Layout pageTitle='Register Farm' showUI goBack>
       <Box >
         <p className='heading'>Choose a Plot Icon</p>
-        <div>
-       <button className='button' >Take a Photo</button>
-        <input 
-          className="fileInput"
-          type="file"
-          accept="image/*"
-          placeholder="Gallery"
-        />
+        <div className='m20'>
+        <button className='btn primary ml20' style={{border:'none'}} >Take a Photo</button>
+
+        <input placeholder='Upload Screenshot' id="imageinput" type="file" accept="image/*" style={{display:'none', visibility:'hidden'}}/>
+        <label htmlFor="imageinput" className='btn textSM primary textCenter' style={{cursor:'pointer',margin:'10px 0 0 20px'}} >From Gallery</label>
         </div>
       </Box>
       <Box className='p40' >
@@ -72,11 +66,10 @@ const RegisterFarm: React.FC = () => {
         <div style={{display:'flex',flexWrap:'wrap',justifyContent:'space-around' }}>
           {crops.map((crop,index) => (
             <div style={{width:'30%',borderRadius:'10px', cursor: 'pointer', height:'120px',  marginTop:'10px',
-               border: selectedCrops.includes(crop.name) ? '3px solid green' : '1px solid rgb(220,220,220  )'}}>
+               border: selectedCrop.includes(crop.name) ? '3px solid green' : '1px solid rgb(220,220,220  )'}}>
               <img
                 onClick={() => toggleCropSelection(crop.name)}
-                src={crop.image}
-                alt={crop.name}
+                src={crop.image} alt={crop.name}
                 style={{
                   width: '60px', height: '60px', margin: 'auto', display:'block', marginTop:'15px'
                 }}
@@ -86,20 +79,18 @@ const RegisterFarm: React.FC = () => {
           ))}
         </div>
       </Box>
-      
+
       <p className='heading p40' >Inter Crop</p>
       <p className='heading p40' >Is your main crop same as your Inter Crop</p>
       <Box className='tabs' sx={{ marginTop: '40px' }}>
-          <button style={{backgroundColor:'#fff',color:'10,10,10',width:'48%', borderRadius:'10px',border:'none',height:'40px',marginLeft:'5px' }}  
+          <button style={{backgroundColor:'#fff',width:'48%', borderRadius:'10px',border:'none',height:'40px',marginLeft:'5px' }}  
           onClick={()=>{}}
           >
             Yes
           </button>
-          <button style={{backgroundColor:'#fff',color:'10,10,10',width:'48%', borderRadius:'10px',border:'none',height:'40px',marginLeft:'5px' }}
-          
-          >
+          <button style={{width:'48%', borderRadius:'10px',border:'none',height:'40px',marginLeft:'5px' }}>
             No
-            </button>
+          </button>
       </Box>
       <NavLink
         to={"/app/advisory/farms"}

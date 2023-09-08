@@ -1,5 +1,4 @@
 import "./styles/global.css";
-// import React from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import SplashScreen from "./pages/app/SplashScreen";
 import ChooseLanguage from "./pages/app/ChooseLanguage";
@@ -32,6 +31,12 @@ import QRinfo from "./pages/app/QRinfo";
 import ConsultationDate from "./pages/app/ConsultationDate";
 import AdvisoryReview from "./pages/app/AdvisoryReview";
 import Successful from "./pages/app/Successful";
+{
+  /*CropSchedule */
+}
+import CropSchedule from "./pages/app/CropSchedule";
+import MYFarms from "./pages/app/MyPlots";
+import Plot from "./pages/app/Plot";
 {
   /* Community */
 }
@@ -121,6 +126,21 @@ const App: FC = () => {
           path={`/${URL_PREFIX}/advisory/payment/successful`}
           Component={Successful}
         />
+
+        {/* CropSchedule */}
+        <Route
+          path={`/${URL_PREFIX}/cropschedule`}
+          Component={CropSchedule}
+        />
+         <Route
+          path={`/${URL_PREFIX}/myplots`}
+          Component={MYFarms}
+        />
+        <Route
+          path={`/${URL_PREFIX}/plotdetails`}
+          Component={Plot}
+        />
+
 
         {/* Community */}
         <Route path={`/${URL_PREFIX}/community`} Component={Community} />
