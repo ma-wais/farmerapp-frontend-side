@@ -37,15 +37,16 @@ import Successful from "./pages/app/Successful";
 import CropSchedule from "./pages/app/CropSchedule";
 import MYFarms from "./pages/app/MyPlots";
 import Plot from "./pages/app/Plot";
+
 {
   /* Community */
 }
-
 const App: FC = () => {
   const URL_PREFIX = "app";
   return (
+    <>
       <Routes>
-        <Route path="/" element={<Navigate to="/app" />} />
+        <Route path="/" element={<Navigate to="/app/splashScreen" />} />
         <Route path={`/${URL_PREFIX}/`} Component={Home} />
         <Route path={`/${URL_PREFIX}/splashScreen`} Component={SplashScreen} />
         <Route
@@ -58,6 +59,7 @@ const App: FC = () => {
           Component={ChooseAccount}
         />
         <Route path={`/${URL_PREFIX}/signup`} Component={Signup} />
+        <Route path={`/${URL_PREFIX}/signup/:role`} Component={Signup} />
         <Route
           path={`/${URL_PREFIX}/verifyNewAccount`}
           Component={VerifyNewAccount}
@@ -82,14 +84,8 @@ const App: FC = () => {
           path={`/${URL_PREFIX}/advisory/registerFarm`}
           Component={RegisterFarm}
         />
-         <Route
-          path={`/${URL_PREFIX}/advisory/farms`}
-          Component={Farms}
-        />
-        <Route
-          path={`/${URL_PREFIX}/advisory/schedule`}
-          Component={Schedule}
-        />
+        <Route path={`/${URL_PREFIX}/advisory/farms`} Component={Farms} />
+        <Route path={`/${URL_PREFIX}/advisory/schedule`} Component={Schedule} />
         <Route
           path={`/${URL_PREFIX}/advisory/bookConsultation`}
           Component={BookConsultation}
@@ -102,11 +98,8 @@ const App: FC = () => {
           path={`/${URL_PREFIX}/advisory/advisoryPlan`}
           Component={AdvisoryPlan}
         />
+        <Route path={`/${URL_PREFIX}/advisory/payment`} Component={Payment} />
         <Route
-          path={`/${URL_PREFIX}/advisory/payment`}
-          Component={Payment}
-        />
-         <Route
           path={`/${URL_PREFIX}/advisory/payment/qrcode`}
           Component={QRCode}
         />
@@ -114,11 +107,11 @@ const App: FC = () => {
           path={`/${URL_PREFIX}/advisory/payment/qrinfo`}
           Component={QRinfo}
         />
-         <Route
+        <Route
           path={`/${URL_PREFIX}/advisory/payment/consultationdate`}
           Component={ConsultationDate}
         />
-         <Route
+        <Route
           path={`/${URL_PREFIX}/advisory/payment/advisoryreview`}
           Component={AdvisoryReview}
         />
@@ -128,19 +121,9 @@ const App: FC = () => {
         />
 
         {/* CropSchedule */}
-        <Route
-          path={`/${URL_PREFIX}/cropschedule`}
-          Component={CropSchedule}
-        />
-         <Route
-          path={`/${URL_PREFIX}/myplots`}
-          Component={MYFarms}
-        />
-        <Route
-          path={`/${URL_PREFIX}/plotdetails`}
-          Component={Plot}
-        />
-
+        <Route path={`/${URL_PREFIX}/cropschedule`} Component={CropSchedule} />
+        <Route path={`/${URL_PREFIX}/myplots`} Component={MYFarms} />
+        <Route path={`/${URL_PREFIX}/plotdetails`} Component={Plot} />
 
         {/* Community */}
         <Route path={`/${URL_PREFIX}/community`} Component={Community} />
@@ -153,6 +136,7 @@ const App: FC = () => {
           Component={ConnectionsProfile}
         />
       </Routes>
+    </>
   );
 };
 
