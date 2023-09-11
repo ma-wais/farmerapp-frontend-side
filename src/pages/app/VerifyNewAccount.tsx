@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import Layout from "./Layout";
 import { Box, Typography } from "@mui/material";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Input from "../../components/app/Input";
 import AuthService from "../../service/Auth.js";
 import { useSelector } from "react-redux";
 import { selectData } from "../../redux/auth/selectors.js";
 import { URL_PREFIX } from "../../App.js";
+import { store } from "../../redux/store.js";
+import { login } from "../../redux/auth/actions.js";
 interface OTP {
   letter1: string | number;
   letter2: string | number;
@@ -31,14 +33,20 @@ const VerifyNewAccount: React.FC = () => {
       AuthService.verifyOtp({
         email: data?.email,
         otp: parseInt(letters),
-      }).then(() => {
+      }).then(async () => {
+        const { data: me } = await AuthService.me();
+        console.log(me);
+        store.dispatch(login(me));
         navigate(`/${URL_PREFIX}/`);
       });
     } else if (data?.phone) {
       AuthService.verifyOtp({
         phone: data?.phone,
         otp: parseInt(letters),
-      }).then(() => {
+      }).then(async () => {
+        const { data: me } = await AuthService.me();
+        console.log(me);
+        store.dispatch(login(me));
         navigate(`/${URL_PREFIX}/`);
       });
     }
@@ -127,7 +135,6 @@ const VerifyNewAccount: React.FC = () => {
             }
           }}
         >
-          {" "}
           Resend
         </a>
       </Box>

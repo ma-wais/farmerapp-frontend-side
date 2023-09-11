@@ -11,10 +11,11 @@ class Auth {
     middleField(this.api);
   }
 
-  register({ role, email, phone, password, confirmPassword }) {
+  register({ role, email, phone, password, confirmPassword, name }) {
     return this.api.post("/register", {
       role,
       email,
+      name,
       phone,
       password,
       confirmPassword,
@@ -32,6 +33,9 @@ class Auth {
       email,
       phone,
     });
+  }
+  me() {
+    return this.api.get("/me");
   }
 
   login({ email, password = "", role, phone = "" }) {

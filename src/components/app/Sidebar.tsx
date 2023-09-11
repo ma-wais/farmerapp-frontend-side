@@ -17,13 +17,16 @@ import file from "../../assets/icons/fileSB.svg";
 import logout from "../../assets/icons/logout.svg";
 import { store } from "../../redux/store.js";
 import { logout as logoutaction } from "../../redux/auth/actions.js";
-
+import { useSelector } from "react-redux";
+import { selectUser } from "../../redux/auth/selectors.js";
 export const toggleSidebar = () => {
   const sidebar = document.querySelector("#sidebar");
   sidebar?.classList.toggle("show");
 };
 
 const Sidebar = () => {
+  const user = useSelector(selectUser);
+  console.log(user);
   return (
     <Box className="sidebar" id="sidebar">
       <Box className="close" onClick={toggleSidebar}>
@@ -31,16 +34,15 @@ const Sidebar = () => {
       </Box>
       <Box className="profile">
         <Box className="img">
-          <img
-            src={
-              "https://images.pexels.com/photos/8420889/pexels-photo-8420889.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            }
-            alt=""
-          />
+          {user?.image ? (
+            <img src={user?.image} alt="" />
+          ) : (
+            <div className="character-dp">{user?.name[0]}</div>
+          )}
         </Box>
         <Box>
-          <Typography>Karna</Typography>
-          <Box className="textSM">+91 98765 43210</Box>
+          <Typography>{user?.name ?? ""}</Typography>
+          <Box className="textSM">{user?.phone}</Box>
         </Box>
       </Box>
       <Box className="navLinks">

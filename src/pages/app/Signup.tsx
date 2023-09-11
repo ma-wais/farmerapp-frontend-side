@@ -4,7 +4,7 @@ import { Box, Typography } from "@mui/material";
 import { NavLink, useNavigate, useParams } from "react-router-dom";
 import Input from "../../components/app/Input";
 import Select from "../../components/app/Select";
-import { AiTwotonePhone } from "react-icons/ai";
+import { AiFillProfile, AiTwotonePhone } from "react-icons/ai";
 import { MdPassword } from "react-icons/md";
 import AuthService from "../../service/Auth.js";
 import { store } from "../../redux/store.js";
@@ -21,6 +21,7 @@ const Signup: React.FC = () => {
     role: "farmer",
     phone: "",
     language: "en",
+    name: "",
   });
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -120,6 +121,18 @@ const Signup: React.FC = () => {
               value={formData.phone}
               onChange={handleChange}
               label={"Phone"}
+            />
+          </li>
+          <li>
+            <AiFillProfile fontSize={22} />
+            <Input
+              required
+              type="text"
+              name="name"
+              maxLength={11}
+              value={formData.name}
+              onChange={handleChange}
+              label={"Full Name"}
             />
           </li>
 

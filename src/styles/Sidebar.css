@@ -54,7 +54,7 @@
   position: absolute;
   cursor: pointer;
   opacity: 0;
-  transition: opacity 150ms linear ;
+  transition: opacity 150ms linear;
 }
 .sidebar .toggler img {
   padding: 10px 13px;
@@ -63,16 +63,16 @@
   background: #fff;
 }
 
-.sidebar:hover .toggler{
+.sidebar:hover .toggler {
   opacity: 1;
 }
 
 .sidebar.collapsed {
   width: 70px;
 }
-.sidebar.collapsed .sidebarMenu .sidebarLink span{
+.sidebar.collapsed .sidebarMenu .sidebarLink span {
   opacity: 0;
 }
-.sidebar.collapsed .toggler{
+.sidebar.collapsed .toggler {
   transform: rotateZ(180deg);
 }
