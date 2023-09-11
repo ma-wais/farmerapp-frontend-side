@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export interface NavbarProps {
   pageTitle?: string;
   goBack?: boolean;
@@ -6,7 +8,7 @@ export interface NavbarProps {
 }
 
 export interface LayoutProps extends NavbarProps {
-  children: JSX.IntrinsicAttributes | JSX.IntrinsicAttributes[];
+  children: ReactNode;
   className?: string;
   style?: React.CSSProperties;
   showUI: boolean;

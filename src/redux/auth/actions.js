@@ -1,4 +1,4 @@
-import { LOADING, LOGIN, LOGOUT } from "./constants";
+import { LOADING, LOGIN, LOGOUT, DATA } from "./constants";
 
 export const login = (user) => ({
   type: LOGIN,
@@ -7,6 +7,10 @@ export const login = (user) => ({
 
 export const logout = () => ({
   type: LOGOUT,
+});
+export const data = (data) => ({
+  type: DATA,
+  payload: data,
 });
 
 export const setLoading = (loading) => ({

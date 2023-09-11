@@ -1,10 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import Layout from "./Layout";
 import { Box, Typography } from "@mui/material";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Input from "../../components/app/Input";
-
+import AuthService from "../../service/Auth.js";
+import { useSelector } from "react-redux";
+import { selectData } from "../../redux/auth/selectors.js";
+import { URL_PREFIX } from "../../App.js";
+interface OTP {
+  letter1: string | number;
+  letter2: string | number;
+  letter3: string | number;
+  letter4: string | number;
+}
 const VerifyNewAccount: React.FC = () => {
+  const data = useSelector(selectData);
+  const navigate = useNavigate();
+  const [otp, setOtp] = useState<OTP>({
+    letter1: "",
+    letter2: "",
+    letter3: "",
+    letter4: "",
+  });
+  const handleSubmit = async () => {
+    let letters = "";
+    for (let values of Object.keys(otp)) {
+      letters += otp[values];
+    }
+    if (data?.email) {
+      AuthService.verifyOtp({
+        email: data?.email,
+        otp: parseInt(letters),
+      }).then(() => {
+        navigate(`/${URL_PREFIX}/`);
+      });
+    } else if (data?.phone) {
+      AuthService.verifyOtp({
+        phone: data?.phone,
+        otp: parseInt(letters),
+      }).then(() => {
+        navigate(`/${URL_PREFIX}/`);
+      });
+    }
+  };
   return (
     <Layout showUI={false}>
       <Box className="textCenter">
@@ -28,8 +66,11 @@ const VerifyNewAccount: React.FC = () => {
         <li>
           <Input
             className="textCenter"
-            type="number"
-            value={"1"}
+            type="text"
+            value={otp.letter1}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+              setOtp((prev: OTP) => ({ ...prev, letter1: e.target.value }));
+            }}
             label={""}
             maxLength={1}
           />
@@ -37,8 +78,11 @@ const VerifyNewAccount: React.FC = () => {
         <li>
           <Input
             className="textCenter"
-            type="number"
-            value={"2"}
+            type="text"
+            value={otp.letter2}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+              setOtp((prev: OTP) => ({ ...prev, letter2: e.target.value }));
+            }}
             label={""}
             maxLength={1}
           />
@@ -46,8 +90,11 @@ const VerifyNewAccount: React.FC = () => {
         <li>
           <Input
             className="textCenter"
-            type="number"
-            value={"3"}
+            type="text"
+            value={otp.letter3}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+              setOtp((prev: OTP) => ({ ...prev, letter3: e.target.value }));
+            }}
             label={""}
             maxLength={1}
           />
@@ -55,8 +102,11 @@ const VerifyNewAccount: React.FC = () => {
         <li>
           <Input
             className="textCenter"
-            type="number"
-            value={"4"}
+            type="text"
+            value={otp.letter4}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+              setOtp((prev: OTP) => ({ ...prev, letter4: e.target.value }));
+            }}
             label={""}
             maxLength={1}
           />
@@ -69,6 +119,13 @@ const VerifyNewAccount: React.FC = () => {
           href="#!"
           className="textPrimary fwMedium"
           style={{ textDecoration: "none" }}
+          onClick={() => {
+            if (data?.email) {
+              AuthService.resendOtp({ email: data?.email });
+            } else if (data?.phone) {
+              AuthService.resendOtp({ phone: data?.phone });
+            }
+          }}
         >
           {" "}
           Resend
@@ -76,9 +133,9 @@ const VerifyNewAccount: React.FC = () => {
       </Box>
 
       <Box className="mtAuto">
-        <NavLink to={`#`} className={`btn primary block`}>
+        <button onClick={handleSubmit} className={`btn primary block`}>
           Verify Account
-        </NavLink>
+        </button>
       </Box>
     </Layout>
   );

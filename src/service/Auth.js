@@ -20,9 +20,22 @@ class Auth {
       confirmPassword,
     });
   }
+  verifyOtp({ otp, email = "", phone = "" }) {
+    return this.api.post("/verifyOtp", {
+      otp,
+      email,
+      phone,
+    });
+  }
+  resentOtp({ email = "", phone = "" }) {
+    return this.api.post("/resendOtp", {
+      email,
+      phone,
+    });
+  }
 
-  login({ email, password }) {
-    return this.api.post("/login", { email, password });
+  login({ email, password = "", role, phone = "" }) {
+    return this.api.post("/login", { email, password, role, phone });
   }
 
   refresh({ accessToken, refreshToken }) {

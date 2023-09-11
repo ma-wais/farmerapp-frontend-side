@@ -41,8 +41,8 @@ import Plot from "./pages/app/Plot";
 {
   /* Community */
 }
+export const URL_PREFIX = "app";
 const App: FC = () => {
-  const URL_PREFIX = "app";
   return (
     <>
       <Routes>

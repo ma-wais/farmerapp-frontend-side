@@ -1,22 +1,19 @@
 import React, { useState, useEffect } from "react";
 import Layout from "./Layout";
 import { Box, Typography } from "@mui/material";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
 import Input from "../../components/app/Input";
 import Select from "../../components/app/Select";
 import { AiTwotonePhone } from "react-icons/ai";
 import { MdPassword } from "react-icons/md";
 import AuthService from "../../service/Auth.js";
+import { store } from "../../redux/store.js";
+import { data } from "../../redux/auth/actions.js";
+import Cookies from "js-cookie";
+import { URL_PREFIX } from "../../App.js";
 const Signup: React.FC = () => {
   const params = useParams();
-  const handleSubmit = async () => {
-    try {
-      const { data } = await AuthService.register({ ...formData });
-      console.log(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -25,6 +22,21 @@ const Signup: React.FC = () => {
     phone: "",
     language: "en",
   });
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      const { data: res } = await AuthService.register({ ...formData });
+      if (res?.accessToken) {
+        Cookies.set("accessToken", res.accessToken);
+        Cookies.set("refreshToken", res.refreshToken);
+        store.dispatch(data({ email: formData.email }));
+        navigate(`/${URL_PREFIX}/verifyNewAccount`);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     const language = localStorage.getItem("farm_dss_current_language") || "";
     if (language.length > 0 || language !== "null") {
@@ -97,41 +109,14 @@ const Signup: React.FC = () => {
               <option value="buyer">Buyer</option>
             </Select>
           </li>
-          <li>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="26"
-              height="26"
-              viewBox="0 0 26 26"
-              fill="none"
-            >
-              <rect
-                x="3.25"
-                y="5.41699"
-                width="19.5"
-                height="15.1667"
-                rx="3"
-                stroke="#ADB4C0"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M21.1248 7.04199L12.9998 15.167L7.0415 9.20866"
-                stroke="#ADB4C0"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-            <Input type="email" required label={"Email"} />
-          </li>
+
           <li>
             <AiTwotonePhone fontSize={22} />
             <Input
               required
-              type="tel"
+              type="text"
               name="phone"
+              maxLength={11}
               value={formData.phone}
               onChange={handleChange}
               label={"Phone"}
@@ -207,7 +192,7 @@ const Signup: React.FC = () => {
               gap: "1em",
             }}
           >
-            <input type="checkbox" />
+            <input type="checkbox" required />
             <label>I agree to all user agreement and privacy policy.</label>
           </Box>
           <button className={`btn primary block`}>Create Account</button>

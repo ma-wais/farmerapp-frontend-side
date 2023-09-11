@@ -47,7 +47,7 @@ export const middleField = (api) => {
         };
 
         return fetch(
-          import.meta.env.VITE_BACKEND_URL + "/api/auth/refresh",
+          import.meta.env.VITE_BACKEND_URL + "/auth/refresh",
           requestOptions
         );
       }

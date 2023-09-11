@@ -1,7 +1,8 @@
-import { LOADING, LOGIN, LOGOUT } from "./constants";
+import { LOADING, LOGIN, LOGOUT, DATA } from "./constants";
 
 const initialState = {
   user: null,
+  otpdata: null,
 };
 
 const authReducer = (state = initialState, action) => {
@@ -15,6 +16,12 @@ const authReducer = (state = initialState, action) => {
       return {
         ...state,
         user: null,
+        otpdata: null,
+      };
+    case DATA:
+      return {
+        ...state,
+        otpdata: action.payload,
       };
     case LOADING:
       return {
