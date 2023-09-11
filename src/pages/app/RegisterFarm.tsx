@@ -83,7 +83,8 @@ const RegisterFarm: React.FC = () => {
       <p className='heading p40' >Inter Crop</p>
       <p className='heading p40' >Is your main crop same as your Inter Crop</p>
       <Box className='tabs' sx={{ marginTop: '40px' }}>
-          <button style={{backgroundColor:'#fff',width:'48%', borderRadius:'10px',border:'none',height:'40px',marginLeft:'5px' }}  
+          <button 
+          style={{backgroundColor:'#fff',width:'48%', borderRadius:'10px',border:'none',height:'40px',marginLeft:'5px' }}  
           onClick={()=>{}}
           >
             Yes

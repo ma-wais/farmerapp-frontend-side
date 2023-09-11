@@ -3,13 +3,12 @@ import { FC } from 'react'
 import Layout from './Layout'
 import { Box, Typography } from '@mui/material'
 import { NavLink } from 'react-router-dom'
-
+import Arrow from '../../assets/img/advisory/notifImg.svg'
 import profileBG from '../../assets/img/app/profile_bg.png'
-import personImg from '../../assets/img/img001.jpg'
-import profileImg from '../../assets/img/profile001.jpg'
+import profileImg from '../../assets/img/advisory/karna.svg'
 
 
-const ConnectionsProfile: FC = () => {
+const CommunityProfile: FC = () => {
     return (
         <Layout showUI goBack>
             <Box className="profileBG">
@@ -19,12 +18,12 @@ const ConnectionsProfile: FC = () => {
                         <img src={profileImg} alt="" />
                     </Box>
                     <Box className="userName">
-                        Nithin
+                    Karna
                     </Box>
                 </Box>
             </Box>
             <Box sx={{ height: '250px' }}></Box>
-            <Box className="accountDetails">
+            <Box className="accountDetails m40">
                 <Box className='textCenter'>
                     <Typography className='heading'>45</Typography>
                     <Typography>Following</Typography>
@@ -38,29 +37,10 @@ const ConnectionsProfile: FC = () => {
                     <Typography>Posts</Typography>
                 </Box>
             </Box>
-            <Box className='buttonSection'>
-                <NavLink className={'btn primary'} to={'#!'}>
-                    Follow
-                </NavLink>
-                <NavLink className={'btn outline primary'} to={'#!'}>
-                    {/* Comment ICON */}
-                    <svg
-                        width={24}
-                        height={24}
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            d="M8 10H16M8 14H16M21.0039 12C21.0039 16.9706 16.9745 21 12.0039 21C9.9675 21 3.00463 21 3.00463 21C3.00463 21 4.56382 17.2561 3.93982 16.0008C3.34076 14.7956 3.00391 13.4372 3.00391 12C3.00391 7.02944 7.03334 3 12.0039 3C16.9745 3 21.0039 7.02944 21.0039 12Z"
-                            stroke="#C89963"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                        />
-                    </svg>
-                </NavLink>
-            </Box>
+            <NavLink to={'/#'} className='btn block m20' 
+                style={{color:'#C89963',border:'3px solid  #C89963',width:'100% ', borderRadius:'10px', background:'none'}}>
+                Create Post
+            </NavLink>
             <Box className="categoriesList">
                 <Box className="bage primary">Crop Health</Box>
                 <Box className="bage primary">Lorem</Box>
@@ -73,11 +53,11 @@ const ConnectionsProfile: FC = () => {
                     <Box className="header">
                         <Box className='profile'>
                             <Box className="avatar">
-                                <img src={'https://images.pexels.com/photos/8420889/pexels-photo-8420889.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'} alt="" />
+                                <img src={Arrow} alt="" />
                             </Box>
                             <Box>
                                 <Typography className='name'>
-                                    Nandana
+                                Karna
                                 </Typography>
                                 <Typography className='date'>
                                     25d
@@ -156,11 +136,11 @@ const ConnectionsProfile: FC = () => {
                     <Box className="header">
                         <Box className='profile'>
                             <Box className="avatar">
-                                <img src={'https://images.pexels.com/photos/8420889/pexels-photo-8420889.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'} alt="" />
+                                <img src={Arrow} alt="" />
                             </Box>
                             <Box>
                                 <Typography className='name'>
-                                    Nandana
+                                    Karna
                                 </Typography>
                                 <Typography className='date'>
                                     25d
@@ -240,4 +220,4 @@ const ConnectionsProfile: FC = () => {
     )
 }
 
-export default ConnectionsProfile
+export default CommunityProfile
