@@ -1,69 +1,69 @@
 * {
-    font-family: "Manrope" !important;
+  font-family: "Manrope" !important;
 }
 
 .appPage {
-    min-height: 100vh;
-    padding: 1em;
-    padding-top: 2em;
-    display: flex;
-    flex-direction: column;
+  min-height: 100vh;
+  padding: 1em;
+  padding-top: 2em;
+  display: flex;
+  flex-direction: column;
 }
 
 .appPage .heading {
-    color: #2C4364;
-    font-style: normal;
-    font-size: 24px;
-    font-weight: 600;
+  color: #2c4364;
+  font-style: normal;
+  font-size: 24px;
+  font-weight: 600;
 }
 
 .appPage p {
-    color: #838FA0;
-    font-family: Manrope;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 24px;
-    /* 171.429% */
+  color: #838fa0;
+  font-family: Manrope;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  /* 171.429% */
 }
 
 .appPage .list {
-    gap: 1em;
-    display: flex;
-    flex-direction: column;
+  gap: 1em;
+  display: flex;
+  flex-direction: column;
 }
 
 .appPage .list.bordered li {
-    border: 1px solid #EAECF0;
+  border: 1px solid #eaecf0;
 }
 
 .appPage .list li {
-    gap: .5em;
-    padding: 1.2em;
-    position: relative;
-    display: flex;
-    align-items: center;
-    border-radius: 12px;
-    background: var(--white-500, #FFF);
-    box-shadow: 0px 12px 60px 0px rgba(93, 105, 118, 0.10);
+  gap: 0.5em;
+  padding: 1.2em;
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 12px;
+  background: var(--white-500, #fff);
+  box-shadow: 0px 12px 60px 0px rgba(93, 105, 118, 0.1);
 }
 
-.appPage .list.radioList li input[type='radio'] {
-    opacity: 0;
-    position: absolute;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    display: block;
-    position: absolute;
+.appPage .list.radioList li input[type="radio"] {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: block;
+  position: absolute;
 }
 
-.appPage .list.radioList li input[type='radio']~.checkmark {
-    display: none;
+.appPage .list.radioList li input[type="radio"] ~ .checkmark {
+  display: none;
 }
 
-.appPage .list.radioList li input[type='radio']:checked~.checkmark {
-    display: unset;
+.appPage .list.radioList li input[type="radio"]:checked ~ .checkmark {
+  display: unset;
 }
 
 /* .appPage .list li > div{
@@ -73,119 +73,151 @@
 } */
 
 .appPage .list .bage {
-    color: #FFF;
-    font-size: 10px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    letter-spacing: 0.2px;
+  color: #fff;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.2px;
 }
 
 .appPage .btn {
-    padding: 1em;
-    color: #FFF;
-    font-size: 16px;
-    font-weight: 600;
-    text-align: center;
-    text-decoration: none;
-    font-family: "Manrope";
+  padding: 1em;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  font-family: "Manrope";
 }
-
 
 .appPage .btn.primary {
-    color: white;
-    border-radius: 12px;
-    background: #CA9B64;
-    box-shadow: 0px 27px 62px 0px rgba(141, 155, 170, 0.05);
+  color: white;
+  border-radius: 12px;
+  background: #ca9b64;
+  box-shadow: 0px 27px 62px 0px rgba(141, 155, 170, 0.05);
 }
-.appPage .btn.outline{
-    background-color: transparent;
+.appPage .btn.outline {
+  background-color: transparent;
 }
-.appPage .btn.outline.primary{
-    border: 2px solid #C89963;
+.appPage .btn.outline.primary {
+  border: 2px solid #c89963;
 }
 
 .appPage .btn.block {
-    width: 100%;
-    display: block;
+  width: 100%;
+  display: block;
 }
 
 .appPage .bottomSheet {
-    padding: 1.2em 1em;
-    background: #FFF;
-    border-radius: 20px 20px 0px 0px;
-    box-shadow: 0px 10px 100px 0px rgba(85, 94, 104, 0.20);
+  padding: 1.2em 1em;
+  background: #fff;
+  border-radius: 20px 20px 0px 0px;
+  box-shadow: 0px 10px 100px 0px rgba(85, 94, 104, 0.2);
 }
 
 .appPage .tabs {
-    height: 56px;
-    display: flex;
-    align-items: center;
-    padding: 6px;
-    margin-bottom: 40px;
-    border-radius: 12px;
-    background: var(--rhino-dark-50, #EAECF0);
+  height: 56px;
+  display: flex;
+  align-items: center;
+  padding: 6px;
+  margin-bottom: 40px;
+  border-radius: 12px;
+  background: var(--rhino-dark-50, #eaecf0);
 }
 
 .appPage .tabs a {
-    width: 50%;
-    height: 100%;
-    color: #2C4364;
-    font-weight: 400;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    justify-content: center;
-    box-shadow: 0px 26px 60px 0px rgba(141, 155, 170, 0.15);
+  width: 50%;
+  height: 100%;
+  color: #2c4364;
+  font-weight: 400;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  justify-content: center;
+  box-shadow: 0px 26px 60px 0px rgba(141, 155, 170, 0.15);
 }
 
 .appPage .tabs a.active {
-    font-weight: 600;
-    background-color: #FFF;
+  font-weight: 600;
+  background-color: #fff;
 }
 
 .appPage .fab {
-    position: fixed;
-    right: 19px;
-    bottom: 113px;
+  position: fixed;
+  right: 19px;
+  bottom: 113px;
 }
 
 .appPage .rounded0,
 .appPage .rounded0 li {
-    border-radius: 0px !important;
+  border-radius: 0px !important;
 }
 
 .appPage .borderBottom1 {
-    border-bottom: 1px solid #EFF2F6;
+  border-bottom: 1px solid #eff2f6;
 }
 
 .appPage .shadowNone,
 .appPage .shadowNone li {
-    box-shadow: none !important;
+  box-shadow: none !important;
 }
 
 .appPage .avatar {
-    width: 40px;
-    height: 40px;
-    overflow: hidden;
-    border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 50%;
 }
 
 .appPage .avatar img {
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
 }
 
 .appPage .bage {
-    padding: 5px 9px;
+  padding: 5px 9px;
 }
 
 .appPage .bage.primary {
-    background-color: #C89963;
-    color: #FFF;
+  background-color: #c89963;
+  color: #fff;
 }
 
 .appPage .rounded {
-    border-radius: 50px;
+  border-radius: 50px;
+}
+
+.MuiPickersCalendarHeader-root {
+  border-bottom: 1px solid #e4e5e7;
+  position: relative;
+  margin-left: 24px;
+  margin-right: 12px;
+
+  padding: 2rem 0px;
+}
+.MuiDateCalendar-root .Mui-selected {
+  background-color: #ce9939 !important;
+}
+.MuiDateCalendar-root .MuiPickersCalendarHeader-switchViewButton {
+  display: none;
+}
+.MuiDateCalendar-root .MuiPickersCalendarHeader-label {
+  color: black;
+  font-weight: 700;
+}
+.MuiDateCalendar-root .MuiPickersArrowSwitcher-root {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.MuiDateCalendar-root .MuiPickersCalendarHeader-labelContainer {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+}
+.MuiDateCalendar-root {
+  border: 1px solid #e4e5e7 !important;
+  border-radius: 13px;
 }
