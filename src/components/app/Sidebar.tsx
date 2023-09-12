@@ -19,6 +19,7 @@ import { store } from "../../redux/store.js";
 import { logout as logoutaction } from "../../redux/auth/actions.js";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../redux/auth/selectors.js";
+import { URL_PREFIX } from "../../App.js";
 export const toggleSidebar = () => {
   const sidebar = document.querySelector("#sidebar");
   sidebar?.classList.toggle("show");
@@ -46,7 +47,7 @@ const Sidebar = () => {
         </Box>
       </Box>
       <Box className="navLinks">
-        <NavLink to={"#!"}>
+        <NavLink to={`/${URL_PREFIX}/cropschedule`}>
           <Box className="icon">
             <img src={calender} alt="" />
           </Box>

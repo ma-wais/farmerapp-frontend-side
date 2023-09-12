@@ -111,9 +111,10 @@ const RegisterFarm: React.FC = () => {
                 cursor: "pointer",
                 height: "120px",
                 marginTop: "10px",
-                border: selectedCrop.includes(crop.name)
-                  ? "3px solid green"
-                  : "1px solid rgb(220,220,220  )",
+                border:
+                  selectedCrop === crop.name
+                    ? "3px solid green"
+                    : "1px solid rgb(220,220,220)",
               }}
             >
               <img
