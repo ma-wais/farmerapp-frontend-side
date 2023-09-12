@@ -8,7 +8,7 @@ const ManageNetwork: React.FC = () => {
     <Layout showUI goBack pageTitle='Manage Network'>
         <div className='layout m20 contentBetween' style={{borderRadius:'10px',border:'1px solid rgb(200,200,200)',}} >
           <div className='flex '>
-            <div style={{width:'80%',display:'inline-block',padding:'25px 0 25px 10px'}} >
+            <div style={{width:'95%',display:'inline-block',padding:'25px 0 25px 10px'}} >
             <p className=" textDark" style={{fontSize:'20px',fontWeight:'600'}}>
                 Manage my Network
             </p>
@@ -16,7 +16,7 @@ const ManageNetwork: React.FC = () => {
           </div>
           <NavLink to={"#!"} style={{ width:'10%'}} >
             <img src={Arrow} 
-            style={{width:'5%',minWidth:'10px', borderRadius:'10px',margin:'30px 0px 0px 10px'}}  alt="" />
+            style={{width:'5%',minWidth:'10px', borderRadius:'10px',margin:'30px 0px 0px 5px'}} alt="" />
           </NavLink>
         </div>
         <div className='layout m20 contentBetween' style={{borderRadius:'10px',border:'1px solid rgb(200,200,200)',}} >
@@ -29,7 +29,7 @@ const ManageNetwork: React.FC = () => {
           </div>
           <NavLink to={"#!"} style={{ width:'10%'}} >
             <img src={Arrow} 
-            style={{width:'5%',minWidth:'10px', borderRadius:'10px',margin:'30px 0px 0px 10px'}}  alt="" />
+            style={{width:'5%',minWidth:'10px', borderRadius:'10px',margin:'30px 0px 0px 5px'}}  alt="" />
           </NavLink>
         </div>
         <div className='layout m20 contentBetween'>
@@ -42,7 +42,7 @@ const ManageNetwork: React.FC = () => {
           </div>
           <NavLink to={"#!"} style={{ width:'10%'}} >
             <img src={Arrow} 
-            style={{width:'5%',minWidth:'10px', borderRadius:'10px',margin:'30px 0px 0px 10px'}}  alt="" />
+            style={{width:'5%',minWidth:'10px', borderRadius:'10px',margin:'30px 0px 0px 5px'}}  alt="" />
           </NavLink>
         </div>
     </Layout>

@@ -19,7 +19,7 @@ const Advisory: FC = () => {
         your farm and crops that are grown.
       </Typography>
       <NavLink
-        to={"#!"}
+        to={"/app/advisory/registerFarm"}
         className={"btn primary block"}
         style={{ marginTop: "20px" }}
       >

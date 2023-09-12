@@ -21,7 +21,7 @@ const Payment:React.FC = () => {
             <p className=" textDark" style={{fontSize:'20px',fontWeight:'600'}}>Razorpay</p>
             </div>
           </div>
-          <NavLink to={"#!"} style={{ width:'10%',margin:"0% 0px 0 0"}} >
+          <NavLink to={"#!"} style={{ width:'10%',margin:"0% 10px 0 0"}} >
             <img src={Arrow} 
             style={{width:'5%',minWidth:'10px', borderRadius:'10px',margin:'40px 0px 0px 10px'}}  alt="" />
           </NavLink>
@@ -37,9 +37,9 @@ const Payment:React.FC = () => {
             <p className=" textDark" style={{fontSize:'20px',fontWeight:'600'}}>QR Code</p>
             </div>
           </div>
-          <NavLink to={"#!"} style={{ width:'10%',margin:"0% 0px 0 0"}} >
+          <NavLink to={"/app/advisory/payment/qrcode"} style={{ width:'10%'}} >
             <img src={Arrow} 
-            style={{width:'5%',minWidth:'10px', borderRadius:'10px',margin:'40px 0px 0px 10px'}}  alt="" />
+            style={{width:'5%',minWidth:'10px', borderRadius:'10px',margin:'40px 10px 0px 10px'}}  alt="" />
           </NavLink>
         </div>
     <p className='heading p40' >Offline Payment</p>
@@ -54,9 +54,9 @@ const Payment:React.FC = () => {
             <p className=" textDark" style={{fontSize:'20px',fontWeight:'600'}}>Bank Transfer</p>
             </div>
           </div>
-          <NavLink to={"#!"} style={{ width:'10%',margin:"0% 0px 0 0"}} >
+          <NavLink to={"/app/advisory/payment/qrinfo"} style={{ width:'10%'}} >
             <img src={Arrow} 
-            style={{width:'5%',minWidth:'10px', borderRadius:'10px',margin:'40px 0px 0px 10px'}}  alt="" />
+            style={{width:'5%',minWidth:'10px', borderRadius:'10px',margin:'40px 10px 0px 10px'}}  alt="" />
           </NavLink>
         </div>
     <p className='heading p40' >Offers</p>
@@ -71,7 +71,7 @@ const Payment:React.FC = () => {
             <p className=" textDark" style={{fontSize:'20px',fontWeight:'600'}}>Select applicable offers</p>
             </div>
           </div>
-          <NavLink to={"#!"} style={{ width:'10%',margin:"0% 0px 0 0"}} >
+          <NavLink to={"#!"} style={{ width:'10%'}} >
             <img src={Arrow} 
             style={{width:'5%',minWidth:'10px', borderRadius:'10px',margin:'40px 0px 0px 10px'}}  alt="" />
           </NavLink>

@@ -2,6 +2,7 @@ import React from "react";
 import Layout from "./Layout";
 import YChill from "../../assets/img/app/profile_bg.png";
 import Arrow from "../../assets/img/app/Arrow 2.svg";
+import { NavLink } from "react-router-dom";
 
 const Farms: React.FC = () => {
   const farm = [
@@ -45,6 +46,7 @@ const Farms: React.FC = () => {
                   <h3 style={{ padding: "8px 0 10px 10px" }}>
                     {item.location}
                   </h3>
+                  <NavLink to={'/app/plotdetails'}>
                   <img
                     src={Arrow}
                     style={{
@@ -53,6 +55,7 @@ const Farms: React.FC = () => {
                       width: "25px",
                     }}
                   />
+                  </NavLink>
                 </div>
               </div>
             );
@@ -63,7 +66,6 @@ const Farms: React.FC = () => {
             color: "#9A9A9A",
             borderRadius: "10px",
             border: "1px dashed rgb(200,200,200)",
-
             width: "100%",
             backgroundColor: "#fff",
             fontSize: "19px",
@@ -71,7 +73,10 @@ const Farms: React.FC = () => {
             justifyContent: "center",
           }}
         >
-          <span style={{ margin: "2rem 0" }}>Add new farm</span>
+          <span style={{ margin: "2rem 0" }}>
+            <NavLink style={{ textDecoration: 'none' }} to={'/app/advisory/registerFarm'}>
+              <p className="textMD">Add new farm</p>
+            </NavLink> </span>
         </button>
       </div>
     </Layout>

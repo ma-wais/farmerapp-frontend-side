@@ -35,10 +35,21 @@ const RegisterFarm: React.FC = () => {
     <Layout pageTitle="Register Farm" showUI goBack>
       <Box>
         <p className="heading">Choose a Plot Icon</p>
-        <div className="m20">
-          <button className="btn primary ml20" style={{ border: "none" }}>
+        <div className="m40">
+        <input
+            type="file"
+            id="myinput"
+            accept="image/*;capture=camera"
+            capture
+            style={{ display: "none", visibility: "hidden" }}
+          />        
+        <label
+            htmlFor="myinput"
+            className="btn textSM primary textCenter"
+            style={{ cursor: "pointer", margin: "10px 0 0 20px" }}
+          >
             Take a Photo
-          </button>
+          </label>
 
           <input
             placeholder="Upload Screenshot"

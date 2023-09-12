@@ -65,18 +65,21 @@ const Schedule:FC = () => {
             <p style={{paddingLeft:'20px'}} >Get personalized expert guidance for your farm-related queries by booking a consultation call with our experienced agricultural team.</p>
         </div>
      </div>
+     <NavLink  to={"/app/advisory/payment/consultationdate"}  className={"btn primary m20"} >
+        Book Consultation
+     </NavLink>
      <p className='heading p40' >Upcoming Calls</p>
     <div>
-    {call.map((item) => {
+        {call.map((item) => {
             return (
-              <div className='layout m20 flexRow'  style={{borderRadius:'10px',border:'1px solid rgb(200,200,200)'}} >
-                  <div  style={{width:'50%',display:'inline-block',padding:'8px 0 10px 10px'}} >
+              <div className='layout m20 flexRow contentBetween'  style={{borderRadius:'10px',border:'1px solid rgb(200,200,200)'}} >
+                  <div  style={{width:'60%',display:'inline-block',padding:'8px 0 10px 10px'}} >
                   <h2 className="textMD" >{item.name}</h2>
                   <h3 style={{padding:'8px 0 5px 0px'}}>{item.crop}</h3>
                   <h3>{item.time}</h3>
                   </div>
                   <NavLink  to={"#!"}  className={"btn primary"}
-                     style={{height:'70%', width:'30%',margin:"5% 0px 0 0px",}}
+                     style={{height:'70%', width:'40%',margin:"5% 8px 0 0px",}}
                     >
                         Reschedule
                     </NavLink>

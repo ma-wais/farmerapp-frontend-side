@@ -19,7 +19,7 @@ import RegisterFarm from "./pages/app/RegisterFarm";
 import Community from "./pages/app/Community";
 import Messages from "./pages/app/Messages";
 import ConnectionsProfile from "./pages/app/ConnectionsProfile";
-import { FC } from "react";
+// import { FC, ReactNode } from "react";
 import Farms from "./pages/app/Farms";
 import Schedule from "./pages/app/Schedule";
 import BookConsultation from "./pages/app/BookConsultation";
@@ -46,11 +46,12 @@ import CommunityProfileBasic from "./pages/app/CommunityProfileBasic";
 import UserSubscriptions from "./pages/app/UserSubscriptions";
 import PaymentValidation from "./pages/app/PaymentValidation";
 import CreatePost from "./pages/app/CreatePost";
+import ManageNetwork from "./pages/app/ManageNetwork";
 {
   /* Community */
 }
 export const URL_PREFIX = "app";
-const App: FC = () => {
+const App: any = () => {
   return (
     <Routes>
       <Route path="/" element={<Navigate to="/app" />} />
@@ -69,118 +70,42 @@ const App: FC = () => {
       <Route path={`/${URL_PREFIX}/forgotPassword`} Component={ForgotPassword} />
 
       {/* Advisory */}
-      <Route path={`/${URL_PREFIX}/advisory`} Component={Advisory} />
-      <Route
-        path={`/${URL_PREFIX}/advisory/registerFarm`}
-        Component={RegisterFarm}
-      />
-      <Route
-        path={`/${URL_PREFIX}/advisory/farms`}
-        Component={Farms}
-      />
-      <Route
-        path={`/${URL_PREFIX}/advisory/schedule`}
-        Component={Schedule}
-      />
-      <Route
-        path={`/${URL_PREFIX}/advisory/bookConsultation`}
-        Component={BookConsultation}
-      />
-      <Route
-        path={`/${URL_PREFIX}/advisory/PlotAdvisory`}
-        Component={PlotAdvisory}
-      />
-      <Route
-        path={`/${URL_PREFIX}/advisory/advisoryPlan`}
-        Component={AdvisoryPlan}
-      />
-      <Route
-        path={`/${URL_PREFIX}/advisory/payment`}
-        Component={Payment}
-      />
-      <Route
-        path={`/${URL_PREFIX}/advisory/payment/qrcode`}
-        Component={QRCode}
-      />
-      <Route
-        path={`/${URL_PREFIX}/advisory/payment/qrinfo`}
-        Component={QRinfo}
-      />
-      <Route
-        path={`/${URL_PREFIX}/advisory/payment/consultationdate`}
-        Component={ConsultationDate}
-      />
-      <Route
-        path={`/${URL_PREFIX}/advisory/payment/advisoryreview`}
-        Component={AdvisoryReview}
-      />
-      <Route
-        path={`/${URL_PREFIX}/advisory/payment/successful`}
-        Component={Successful}
-      />
+      <Route  path={`/${URL_PREFIX}/advisory`} Component={Advisory} />
+      <Route  path={`/${URL_PREFIX}/advisory/registerFarm`}  Component={RegisterFarm}/>
+      <Route  path={`/${URL_PREFIX}/advisory/farms`}  Component={Farms}/>
+      <Route  path={`/${URL_PREFIX}/advisory/schedule`}  Component={Schedule}/>
+      <Route  path={`/${URL_PREFIX}/advisory/bookConsultation`}  Component={BookConsultation}/>
+      <Route  path={`/${URL_PREFIX}/advisory/PlotAdvisory`}  Component={PlotAdvisory}/>
+      <Route  path={`/${URL_PREFIX}/advisory/advisoryPlan`}  Component={AdvisoryPlan}/>
+      <Route  path={`/${URL_PREFIX}/advisory/payment`}  Component={Payment}/>
+      <Route  path={`/${URL_PREFIX}/advisory/payment/qrcode`}  Component={QRCode}/>
+      <Route  path={`/${URL_PREFIX}/advisory/payment/qrinfo`}  Component={QRinfo}/>
+      <Route  path={`/${URL_PREFIX}/advisory/payment/consultationdate`}  Component={ConsultationDate}/>
+      <Route  path={`/${URL_PREFIX}/advisory/payment/advisoryreview`}  Component={AdvisoryReview}/>
+      <Route  path={`/${URL_PREFIX}/advisory/payment/successful`}  Component={Successful}/>
 
       {/* CropSchedule */}
-      <Route
-        path={`/${URL_PREFIX}/cropschedule`}
-        Component={CropSchedule}
-      />
-      <Route
-        path={`/${URL_PREFIX}/myplots`}
-        Component={MYFarms}
-      />
-      <Route
-        path={`/${URL_PREFIX}/plotdetails`}
-        Component={Plot}
-      />
-      <Route
-        path={`/${URL_PREFIX}/plotSchedule`}
-        Component={PlotSchedule}
-      />
-      <Route
-        path={`/${URL_PREFIX}/irrigation`}
-        Component={Irrigation}
-      />
+      <Route  path={`/${URL_PREFIX}/cropschedule`}  Component={CropSchedule}/>
+      <Route  path={`/${URL_PREFIX}/myplots`}  Component={MYFarms}/>
+      <Route  path={`/${URL_PREFIX}/plotdetails`}  Component={Plot}/>
+      <Route  path={`/${URL_PREFIX}/plotSchedule`}  Component={PlotSchedule}/>
+      <Route  path={`/${URL_PREFIX}/irrigation`}  Component={Irrigation}/>
 
       {/* Community */}
       <Route path={`/${URL_PREFIX}/community`} Component={Community} />
-      <Route
-        path={`/${URL_PREFIX}/community/messages`}
-        Component={Messages}
-      />
-      <Route
-        path={`/${URL_PREFIX}/community/connectionProfile`}
-        Component={ConnectionsProfile}
-      />
-      <Route
-        path={`/${URL_PREFIX}/community/createPost`}
-        Component={CreatePost}
-      />
-      <Route
-        path={`/${URL_PREFIX}/community/terms`}
-        Component={TermsOfService}
-      />
-      <Route
-        path={`/${URL_PREFIX}/community/notifications`}
-        Component={Notifications}
-      />
+      <Route  path={`/${URL_PREFIX}/community/messages`}  Component={Messages}/>
+      <Route  path={`/${URL_PREFIX}/community/connectionProfile`}  Component={ConnectionsProfile}/>
+      <Route  path={`/${URL_PREFIX}/community/createPost`}  Component={CreatePost}/>
+      <Route  path={`/${URL_PREFIX}/community/terms`}  Component={TermsOfService}/>
+      <Route  path={`/${URL_PREFIX}/community/notifications`}  Component={Notifications}/>
 
       {/* User */}
-      <Route
-        path={`/${URL_PREFIX}/community/UserCommunityProfile`}
-        Component={CommunityProfile}
-      />
-       <Route
-        path={`/${URL_PREFIX}/community/CommunityProfile`}
-        Component={CommunityProfileBasic}
-      />
-      <Route
-        path={`/${URL_PREFIX}/community/UserSubscriptions`}
-        Component={UserSubscriptions}
-      />
-      <Route
-        path={`/${URL_PREFIX}/community/paymentValidation`}
-        Component={PaymentValidation}
-      />
+      <Route path={`/${URL_PREFIX}/community/UserCommunityProfile`} Component={CommunityProfile} />
+      <Route path={`/${URL_PREFIX}/community/CommunityProfile`} Component={CommunityProfileBasic}/>
+      <Route  path={`/${URL_PREFIX}/community/UserSubscriptions`}  Component={UserSubscriptions}/>
+      <Route  path={`/${URL_PREFIX}/community/paymentValidation`}  Component={PaymentValidation}/>
+      <Route  path={`/${URL_PREFIX}/community/managenetwork`}  Component={ManageNetwork}/>
+
     </Routes>
   );
 };

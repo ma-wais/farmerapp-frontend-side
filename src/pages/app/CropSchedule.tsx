@@ -18,10 +18,10 @@ const CropSchedule: FC = () => {
       Get a detailed schedule for your farm customized for your crop, region and soil culture. Get your crop schedule now!
       </Typography>
       <NavLink
-        to={"#!"}
+        to={"/app/advisory/bookConsultation"}
         className={"btn primary block m20"}
       >
-        Get in touch with us.
+        Get Crop Schedule
       </NavLink>
     </Layout>
   );
