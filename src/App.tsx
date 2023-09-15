@@ -47,6 +47,10 @@ import UserSubscriptions from "./pages/app/UserSubscriptions";
 import PaymentValidation from "./pages/app/PaymentValidation";
 import CreatePost from "./pages/app/CreatePost";
 import ManageNetwork from "./pages/app/ManageNetwork";
+import Rewards from "./pages/app/Rewards";
+import Badges from "./pages/app/Badges";
+import ClaimedRewards from "./pages/app/ClaimedRewards";
+import RewardDetails from "./pages/app/RewardDetails";
 {
   /* Community */
 }
@@ -151,26 +155,11 @@ const App: FC = () => {
       />
 
       {/* User */}
-      <Route
-        path={`/${URL_PREFIX}/community/UserCommunityProfile`}
-        Component={CommunityProfile}
-      />
-      <Route
-        path={`/${URL_PREFIX}/community/CommunityProfile`}
-        Component={CommunityProfileBasic}
-      />
-      <Route
-        path={`/${URL_PREFIX}/community/UserSubscriptions`}
-        Component={UserSubscriptions}
-      />
-      <Route
-        path={`/${URL_PREFIX}/community/paymentValidation`}
-        Component={PaymentValidation}
-      />
-      <Route
-        path={`/${URL_PREFIX}/community/managenetwork`}
-        Component={ManageNetwork}
-      />
+      <Route path={`/${URL_PREFIX}/community/UserCommunityProfile`} Component={CommunityProfile} />
+      <Route path={`/${URL_PREFIX}/community/CommunityProfile`} Component={CommunityProfileBasic}/>
+      <Route  path={`/${URL_PREFIX}/community/UserSubscriptions`}  Component={UserSubscriptions}/>
+      <Route  path={`/${URL_PREFIX}/community/paymentValidation`}  Component={PaymentValidation}/>
+      <Route  path={`/${URL_PREFIX}/community/managenetwork`}  Component={ManageNetwork}/>
 
       <Route path={`/${URL_PREFIX}/advisory`} Component={Advisory} />
       <Route path={`/${URL_PREFIX}/registerFarm`} Component={RegisterFarm} />
