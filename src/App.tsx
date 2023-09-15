@@ -157,9 +157,19 @@ const App: FC = () => {
       {/* User */}
       <Route path={`/${URL_PREFIX}/community/UserCommunityProfile`} Component={CommunityProfile} />
       <Route path={`/${URL_PREFIX}/community/CommunityProfile`} Component={CommunityProfileBasic}/>
-      <Route  path={`/${URL_PREFIX}/community/UserSubscriptions`}  Component={UserSubscriptions}/>
-      <Route  path={`/${URL_PREFIX}/community/paymentValidation`}  Component={PaymentValidation}/>
-      <Route  path={`/${URL_PREFIX}/community/managenetwork`}  Component={ManageNetwork}/>
+      <Route path={`/${URL_PREFIX}/community/UserSubscriptions`}  Component={UserSubscriptions}/>
+      <Route path={`/${URL_PREFIX}/community/paymentValidation`}  Component={PaymentValidation}/>
+      <Route path={`/${URL_PREFIX}/community/managenetwork`}  Component={ManageNetwork}/>
+
+      {/* Rewards  */}
+      <Route path={`/${URL_PREFIX}/user/rewards`} Component={Rewards} /> 
+      <Route path={`/${URL_PREFIX}/user/Badges`} Component={Badges} /> 
+      <Route path={`/${URL_PREFIX}/user/ClaimedRewards`} Component={ClaimedRewards} /> 
+      <Route path={`/${URL_PREFIX}/user/RewardDetails`} Component={RewardDetails} /> 
+
+
+
+
 
       <Route path={`/${URL_PREFIX}/advisory`} Component={Advisory} />
       <Route path={`/${URL_PREFIX}/registerFarm`} Component={RegisterFarm} />
