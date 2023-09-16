@@ -191,11 +191,11 @@
 
 .MuiPickersCalendarHeader-root {
   border-bottom: 1px solid #e4e5e7;
-  position: relative;
-  margin-left: 24px;
-  margin-right: 12px;
+  position: relative !important;
+  margin-left: 24px !important;
+  margin-right: 12px !important;
 
-  padding: 2rem 0px;
+  padding: 2rem 0px !important;
 }
 .MuiDateCalendar-root .Mui-selected {
   background-color: #ce9939 !important;
@@ -216,6 +216,9 @@
   position: absolute;
   width: 100%;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .MuiDateCalendar-root {
   border: 1px solid #e4e5e7 !important;

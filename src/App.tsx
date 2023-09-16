@@ -70,6 +70,7 @@ const App: FC = () => {
       <Route path={`/${URL_PREFIX}/onboarding`} Component={Onboarding} />
       <Route path={`/${URL_PREFIX}/chooseAccount`} Component={ChooseAccount} />
       <Route path={`/${URL_PREFIX}/signup`} Component={Signup} />
+      <Route path={`/${URL_PREFIX}/signup/:role`} Component={Signup} />
       <Route
         path={`/${URL_PREFIX}/verifyNewAccount`}
         Component={VerifyNewAccount}
