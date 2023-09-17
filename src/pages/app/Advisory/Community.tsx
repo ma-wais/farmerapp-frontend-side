@@ -1,17 +1,17 @@
 import '../../styles/app/page/Community.css';
 import React from 'react'
-import Layout from './Layout'
+import Layout from '../Layout'
 import { Box, Typography } from '@mui/material'
 
 import { NavLink } from 'react-router-dom';
-import BottomSheet, { BottomSheetContent, BottomSheetHeader } from '../../components/app/BottomSheet';
+import BottomSheet, { BottomSheetContent, BottomSheetHeader } from '../../../components/app/BottomSheet';
 
-import Comment from '../../components/app/Comment';
+import Comment from '../../../components/app/Comment';
 import personImg from '../../assets/img/img001.jpg'
 import profileImage from '../../assets/img/img002.jpg'
 import profileImage2 from '../../assets/img/img003.jpg'
-import Input from '../../components/app/Input';
-import SimpleInput from '../../components/app/SimpleInput';
+import Input from '../../../components/app/Input';
+import SimpleInput from '../../../components/app/SimpleInput';
 
 
 const CommentsBottomSheet = (props:any) => {

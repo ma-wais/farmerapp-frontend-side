@@ -1,8 +1,8 @@
 import React from 'react'
-import Layout from './Layout'
+import Layout from '../Layout'
 import { Box, Typography } from '@mui/material';
 import { NavLink } from 'react-router-dom';
-import Input from '../../components/app/Input';
+import Input from '../../../components/app/Input';
 // import Select from '../../components/app/Select';
 
 const ChangePassword: React.FC = () => {

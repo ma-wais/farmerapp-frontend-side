@@ -1,32 +1,31 @@
 import { FC } from "react";
 import { Box, Typography } from "@mui/material";
 import Layout from "./Layout";
-import logo from "../../assets/img/app/logo_bg.svg";
+import logo from "../../assets/img/advisory/Vector.svg";
 import { NavLink } from "react-router-dom";
 import '../../styles/app/page/advisory.css'
 
-const Advisory: FC = () => {
+const OrderSuccess: FC = () => {
   return (
-    <Layout pageTitle="Advisory" showUI>
-      <Box className="textCenter">
-        <img src={logo} alt="logo" />
+    <Layout showUI={false}>
+      <Box className="textCenter m40 p40">
+        <img src={logo} alt="logo" style={{padding:'50px'}} />
       </Box>
       <Box className="heading textCenter">
-        You dont have any farm registered with Us
+      Order Placed Successfully 
       </Box>
       <Typography className="textCenter">
-        Register your farm to get crop advisory and other resources related to
-        your farm and crops that are grown.
+      Your order will be delivered in 3 - 5 days. You can track your order in the My Orders Section. 
       </Typography>
       <NavLink
-        to={"/app/advisory/registerFarm"}
+        to={"/app/ECommerse/MyOrders"}
         className={"btn primary block"}
         style={{ marginTop: "20px" }}
       >
-        Add your first plot
+        Go to My Orders
       </NavLink>
     </Layout>
   );
 };
 
-export default Advisory;
+export default OrderSuccess

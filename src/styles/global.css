@@ -108,7 +108,6 @@ body {
   bottom: 20px;
   position: absolute;
 }
-
 .positionVCenter {
   left: 50%;
   transform: translateX(-50%);
@@ -142,7 +141,7 @@ body {
 }
 
 .textPrimary {
-  color: #c39761;
+  color: #c39761 !important;
 }
 
 .fwMedium {

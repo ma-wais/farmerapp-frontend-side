@@ -50,3 +50,9 @@
 .mr20{
     margin-right: 20px;
 }
+.productbar{
+    height:'200px';
+    width:'150px';
+    background-size:cover; 
+    background-position:center;
+}
