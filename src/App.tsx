@@ -66,7 +66,7 @@ import OrderSuccess from "./pages/app/ECommerse/OrderSuccess";
 import MyOrders from "./pages/app/ECommerse/MyOrders";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
-import { selectUser } from "./redux/auth/actions.js";
+import { selectUser } from "./redux/auth/selectors";
 export const URL_PREFIX = "app";
 const App: React.FC = () => {
   const user = useSelector(selectUser);

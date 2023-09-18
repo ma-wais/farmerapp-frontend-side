@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import YChill from "../../assets/img/advisory/DefProfile.svg";
-import Arrow from "../../assets/img/advisory/arrowback.svg";
-import palak from "../../assets/img/advisory/Frame.svg";
-import Chev from "../../assets/img/advisory/Chev Icon.svg";
-import ArrowUp from "../../assets/img/advisory/ArrowUp.svg";
-import ArrowDown from "../../assets/img/advisory/ArrowDown.svg";
+import YChill from "../../../assets/img/advisory/DefProfile.svg";
+import Arrow from "../../../assets/img/advisory/arrowback.svg";
+import palak from "../../../assets/img/advisory/Frame.svg";
+import Chev from "../../../assets/img/advisory/Chev Icon.svg";
+import ArrowUp from "../../../assets/img/advisory/ArrowUp.svg";
+import ArrowDown from "../../../assets/img/advisory/ArrowDown.svg";
 import { useNavigate, useParams } from "react-router-dom";
-import { farmInterface } from "../../Interface/Farm";
-import FarmService from "../../service/FarmService";
+import { farmInterface } from "../../../Interface/Farm";
+import FarmService from "../../../service/FarmService";
 
 const Plot = () => {
   const [activeQuestion, setActiveQuestion] = React.useState<number>(0);

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Layout from "./Layout";
 
-import Arrow from "../../assets/img/app/Arrow 2.svg";
+import Arrow from "../../../assets/img/app/Arrow 2.svg";
 import { NavLink, useNavigate } from "react-router-dom";
-import FarmService from "../../service/FarmService";
-import { farmInterface } from "../../Interface/Farm";
+import FarmService from "../../../service/FarmService";
+import { farmInterface } from "../../../Interface/Farm";
 const Farms: React.FC = () => {
   const [farms, setFarms] = useState<farmInterface[]>([]);
   const getFarms = async () => {

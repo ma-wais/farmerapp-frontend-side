@@ -1,10 +1,10 @@
 import { FC, useEffect, useState } from "react";
 import Layout from "./Layout";
-import Arrow from "../../assets/img/app/Rectangle 1360.svg";
+
 import { NavLink, useNavigate } from "react-router-dom";
-import Call from "../../assets/img/advisory/Group 770502.png";
-import FarmService from "../../service/FarmService";
-import { farmInterface } from "../../Interface/Farm";
+import Call from "../../../assets/img/advisory/Group 770502.png";
+import FarmService from "../../../service/FarmService";
+import { farmInterface } from "../../../Interface/Farm";
 
 const Schedule: FC = () => {
   const backGroundSetter = (url = "", morestyles = {}) => {

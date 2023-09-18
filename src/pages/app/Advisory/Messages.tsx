@@ -1,12 +1,12 @@
 import React, { FC } from "react";
 import Layout from "./Layout";
-import Input from "../../components/app/Input";
-import SimpleInput from "../../components/app/SimpleInput";
+import Input from "../../../components/app/Input";
+import SimpleInput from "../../../components/app/SimpleInput";
 import { Box, Typography } from "@mui/material";
 
-import profileImage from "../../assets/img/img002.jpg";
-import profileImage1 from "../../assets/img/img001.jpg";
-import profileImage2 from "../../assets/img/img003.jpg";
+import profileImage from "../../../assets/img/img002.jpg";
+import profileImage1 from "../../../assets/img/img001.jpg";
+import profileImage2 from "../../../assets/img/img003.jpg";
 
 const Messages: FC = () => {
   return (

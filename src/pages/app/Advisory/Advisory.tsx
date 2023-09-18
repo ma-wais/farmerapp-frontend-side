@@ -1,9 +1,9 @@
 import { FC } from "react";
 import { Box, Typography } from "@mui/material";
 import Layout from "../Layout";
-import logo from "../../assets/img/app/logo_bg.svg";
+import logo from "../../../assets/img/app/logo_bg.svg";
 import { NavLink } from "react-router-dom";
-import '../../styles/app/page/advisory.css'
+import "../../../styles/app/page/advisory.css";
 
 const Advisory: FC = () => {
   return (

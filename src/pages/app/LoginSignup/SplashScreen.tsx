@@ -1,7 +1,7 @@
 import React from "react";
 import { Box } from "@mui/material";
-import logo from "../../assets/img/app/logo_bg.svg";
-import Loading from "../../components/app/Loading";
+import logo from "../../../assets/img/app/logo_bg.svg";
+import Loading from "../../../components/app/Loading";
 import Layout from "./Layout";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";

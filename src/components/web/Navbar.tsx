@@ -1,6 +1,6 @@
 import React from "react";
 import "../../styles/Navbar.css";
-import search from "../../assets/icons/search.svg";
+import search from "../../../assets/icons/search.svg";
 
 export default function Navbar() {
   return (

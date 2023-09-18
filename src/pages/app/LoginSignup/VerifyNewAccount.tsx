@@ -5,10 +5,10 @@ import { useNavigate } from "react-router-dom";
 import Input from "../../../components/app/Input.tsx";
 import AuthService from "../../../service/Auth.ts";
 import { useSelector } from "react-redux";
-import { selectData } from "../../redux/auth/selectors.js";
-import { URL_PREFIX } from "../../App.js";
-import { store } from "../../redux/store.js";
-import { login } from "../../redux/auth/actions.js";
+import { selectData } from "../../../redux/auth/selectors.ts";
+import { URL_PREFIX } from "../../../App.tsx";
+import { store } from "../../../redux/store.ts";
+import { login } from "../../../redux/auth/actions.ts";
 interface OTP {
   letter1: string | number;
   letter2: string | number;

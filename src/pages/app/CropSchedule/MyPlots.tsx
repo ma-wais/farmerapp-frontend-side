@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Layout from "../Layout";
-// import YChill from "../../assets/img/app/profile_bg.png";
+// import YChill from "../../../assets/img/app/profile_bg.png";
 import FarmService from "../../../service/FarmService";
 import { Box, Typography } from "@mui/material";
-import logo from "../../assets/img/app/logo_bg.svg";
+import logo from "../../../assets/img/app/logo_bg.svg";
 import { NavLink } from "react-router-dom";
 const MYFarms: React.FC = () => {
   const [farm, setFarm] = useState<any[]>([]);

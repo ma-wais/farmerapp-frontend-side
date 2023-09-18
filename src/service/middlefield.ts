@@ -3,15 +3,16 @@ import jwt_decode from "jwt-decode";
 import { logout, setLoading } from "../redux/auth/actions";
 import { store } from "../redux/store";
 import { toast } from "react-toastify";
+import {  AxiosResponse } from "axios";
 
 export const middleField = (api) => {
   api.interceptors.response.use(
-    (response) => {
+    (response:AxiosResponse) => {
       store.dispatch(setLoading(false));
       if (response?.data?.message) toast.success(response.data.message);
       return response;
     },
-    (error) => {
+    (error:any) => {
       store.dispatch(setLoading(false));
       const { response } = error;
       if (response) {
@@ -34,11 +35,11 @@ export const middleField = (api) => {
   );
 
   api.interceptors.request.use(
-    async (config) => {
-      async function refresh({ accessToken, refreshToken }) {
-        var raw = JSON.stringify({ accessToken, refreshToken });
+    async (config={}) => {
+      async function refresh({ accessToken='', refreshToken='' }) {
+        const raw = JSON.stringify({ accessToken, refreshToken });
 
-        var requestOptions = {
+        const requestOptions = {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -58,7 +59,7 @@ export const middleField = (api) => {
 
       if (access_token) {
         const decodedToken = jwt_decode(access_token);
-        if (5000 + decodedToken.exp * 1000 <= new Date()) {
+        if (5000 + (decodedToken?.exp) * 1000 <= Date.now()) {
           const result = await refresh({
             accessToken: access_token,
             refreshToken: refresh_token,
@@ -87,7 +88,7 @@ export const middleField = (api) => {
         },
       };
     },
-    (error) => {
+    (error:Error) => {
       store.dispatch(setLoading(false));
       return Promise.reject(error);
     }

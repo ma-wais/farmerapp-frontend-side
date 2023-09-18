@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import { FC } from "react";
 import Layout from "./Layout";
 import { Box, Typography } from "@mui/material";
-import logo from "../../assets/img/app/logo_bg.svg";
+import logo from "../../../assets/img/app/logo_bg.svg";
 
 const Schedule: FC = () => {
   return (

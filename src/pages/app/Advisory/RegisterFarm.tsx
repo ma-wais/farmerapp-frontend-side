@@ -1,27 +1,26 @@
 import { Box } from "@mui/material";
 import Layout from "./Layout";
-import Profile from "../../assets/img/advisory/profile.svg";
+import Profile from "../../../assets/img/advisory/profile.svg";
 
-import YChill from "../../assets/img/advisory/Frame.png";
-import Capsicum from "../../assets/img/advisory/capsicum (1) 3.png";
-import Carrot from "../../assets/img/advisory/carrot.png";
-import Cocumber from "../../assets/img/advisory/cocumber.png";
-import eggPlant from "../../assets/img/advisory/eggplant 6.png";
-import Mango from "../../assets/img/advisory/mango 3.png";
-import Onion from "../../assets/img/advisory/onoin.png";
-import Radish from "../../assets/img/advisory/radish 3.png";
-import Tomato from "../../assets/img/advisory/tomato 4.png";
+import YChill from "../../../assets/img/advisory/Frame.png";
+import Capsicum from "../../../assets/img/advisory/capsicum (1) 3.png";
+import Carrot from "../../../assets/img/advisory/carrot.png";
+import Cocumber from "../../../assets/img/advisory/cocumber.png";
+import eggPlant from "../../../assets/img/advisory/eggplant 6.png";
+import Mango from "../../../assets/img/advisory/mango 3.png";
+import Onion from "../../../assets/img/advisory/onoin.png";
+import Radish from "../../../assets/img/advisory/radish 3.png";
+import Tomato from "../../../assets/img/advisory/tomato 4.png";
 
 import {
   myWidget,
   myWidgetTwo,
-} from "../../components/ImageUploader/uploadwidget.js";
-import FarmService from "../../service/FarmService.js";
+} from "../../../components/ImageUploader/uploadwidget.js";
+import FarmService from "../../../service/FarmService.js";
 import { useSelector } from "react-redux";
-import { selectUser } from "../../redux/auth/selectors.js";
+import { selectUser } from "../../../redux/auth/selectors.js";
 import { useState } from "react";
 import { toast } from "react-toastify";
-import { farmInterface } from "../../Interface/Farm.js";
 
 interface user {
   _id: string;

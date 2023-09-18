@@ -1,19 +1,19 @@
 import "../../styles/Sidebar.css";
 import React, { useState } from "react";
-import logo from "../../assets/img/logo/Logo.svg";
-import dashboard from "../../assets/icons/dashboard.svg";
-import file from "../../assets/icons/file.svg";
-import handThumb from "../../assets/icons/handThumb.svg";
-import flower from "../../assets/icons/flower.svg";
-import box from "../../assets/icons/box.svg";
-import tv from "../../assets/icons/tv.svg";
-import cash from "../../assets/icons/cash.svg";
-import filePlay from "../../assets/icons/filePlay.svg";
-import newsPaper from "../../assets/icons/newsPaper.svg";
-import people from "../../assets/icons/people.svg";
-import person from "../../assets/icons/person.svg";
-import shop from "../../assets/icons/shop.svg";
-import leftArrow from "../../assets/icons/leftArrow.svg";
+import logo from "../../../assets/img/logo/Logo.svg";
+import dashboard from "../../../assets/icons/dashboard.svg";
+import file from "../../../assets/icons/file.svg";
+import handThumb from "../../../assets/icons/handThumb.svg";
+import flower from "../../../assets/icons/flower.svg";
+import box from "../../../assets/icons/box.svg";
+import tv from "../../../assets/icons/tv.svg";
+import cash from "../../../assets/icons/cash.svg";
+import filePlay from "../../../assets/icons/filePlay.svg";
+import newsPaper from "../../../assets/icons/newsPaper.svg";
+import people from "../../../assets/icons/people.svg";
+import person from "../../../assets/icons/person.svg";
+import shop from "../../../assets/icons/shop.svg";
+import leftArrow from "../../../assets/icons/leftArrow.svg";
 
 import { NavLink } from "react-router-dom";
 

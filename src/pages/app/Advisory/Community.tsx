@@ -1,39 +1,65 @@
-import '../../styles/app/page/Community.css';
-import React from 'react'
-import Layout from '../Layout'
-import { Box, Typography } from '@mui/material'
+import "../../../styles/app/page/Community.css";
+import React from "react";
+import Layout from "../Layout";
+import { Box, Typography } from "@mui/material";
 
-import { NavLink } from 'react-router-dom';
-import BottomSheet, { BottomSheetContent, BottomSheetHeader } from '../../../components/app/BottomSheet';
+import { NavLink } from "react-router-dom";
+import BottomSheet, {
+  BottomSheetContent,
+  BottomSheetHeader,
+} from "../../../components/app/BottomSheet";
 
-import Comment from '../../../components/app/Comment';
-import personImg from '../../assets/img/img001.jpg'
-import profileImage from '../../assets/img/img002.jpg'
-import profileImage2 from '../../assets/img/img003.jpg'
-import Input from '../../../components/app/Input';
-import SimpleInput from '../../../components/app/SimpleInput';
+import Comment from "../../../components/app/Comment";
+import personImg from "../../../assets/img/img001.jpg";
+import profileImage from "../../../assets/img/img002.jpg";
+import profileImage2 from "../../../assets/img/img003.jpg";
+import Input from "../../../components/app/Input";
+import SimpleInput from "../../../components/app/SimpleInput";
 
-
-const CommentsBottomSheet = (props:any) => {
+const CommentsBottomSheet = (props: any) => {
   return (
     <BottomSheet {...props}>
       <BottomSheetHeader>
-        <span className='textDark' style={{ fontWeight: 'bold' }}>1,290</span> Comments
+        <span className="textDark" style={{ fontWeight: "bold" }}>
+          1,290
+        </span>{" "}
+        Comments
       </BottomSheetHeader>
       <BottomSheetContent>
-        <Comment personName={'Karna'} profileImage={profileImage} comment={'Beautiful'} commentTime={'2d'} replies={[]} liked />
-        <Comment personName={'Suraj'} profileImage={profileImage2} comment={'good practice'} commentTime={'2d'} replies={['Reply A', 'Reply B', 'Reply C',]} />
-        <Comment personName={'Harshith'} profileImage={profileImage2} comment={'I do the same for my crop'} commentTime={'2d'} replies={['Reply A', 'Reply B', 'Reply C',]} />
+        <Comment
+          personName={"Karna"}
+          profileImage={profileImage}
+          comment={"Beautiful"}
+          commentTime={"2d"}
+          replies={[]}
+          liked
+        />
+        <Comment
+          personName={"Suraj"}
+          profileImage={profileImage2}
+          comment={"good practice"}
+          commentTime={"2d"}
+          replies={["Reply A", "Reply B", "Reply C"]}
+        />
+        <Comment
+          personName={"Harshith"}
+          profileImage={profileImage2}
+          comment={"I do the same for my crop"}
+          commentTime={"2d"}
+          replies={["Reply A", "Reply B", "Reply C"]}
+        />
       </BottomSheetContent>
 
-      <SimpleInput sx={{
-        position: 'fixed',
-        left: '50%',
-        transform: 'translateX(-50%)',
-        bottom: '16px',
-        width: '90%'
-      }}>
-        <Input placeholder='Comment' />
+      <SimpleInput
+        sx={{
+          position: "fixed",
+          left: "50%",
+          transform: "translateX(-50%)",
+          bottom: "16px",
+          width: "90%",
+        }}
+      >
+        <Input placeholder="Comment" />
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width={19}
@@ -53,35 +79,43 @@ const CommentsBottomSheet = (props:any) => {
             strokeLinecap="round"
           />
         </svg>
-      </ SimpleInput>
+      </SimpleInput>
     </BottomSheet>
-  )
-
-}
+  );
+};
 
 const Community = () => {
   const [showBottomSheet, setShowBottomSheet] = React.useState(false);
 
   return (
-    <Layout pageTitle='Community' showUI community style={{ paddingBottom: '100px' }}>
-      <CommentsBottomSheet show={showBottomSheet} handleClose={() => setShowBottomSheet(false)} />
-      <Typography className="textDark textMD" marginBottom={'24px'}>
+    <Layout
+      pageTitle="Community"
+      showUI
+      community
+      style={{ paddingBottom: "100px" }}
+    >
+      <CommentsBottomSheet
+        show={showBottomSheet}
+        handleClose={() => setShowBottomSheet(false)}
+      />
+      <Typography className="textDark textMD" marginBottom={"24px"}>
         All Feed
       </Typography>
       <Box className="cards">
         <Box className="card">
           <Box className="header">
-            <Box className='profile'>
+            <Box className="profile">
               <Box className="avatar">
-                <img src={'https://images.pexels.com/photos/8420889/pexels-photo-8420889.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'} alt="" />
+                <img
+                  src={
+                    "https://images.pexels.com/photos/8420889/pexels-photo-8420889.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                  }
+                  alt=""
+                />
               </Box>
               <Box>
-                <Typography className='name'>
-                  Nandana
-                </Typography>
-                <Typography className='date'>
-                  25d
-                </Typography>
+                <Typography className="name">Nandana</Typography>
+                <Typography className="date">25d</Typography>
               </Box>
             </Box>
             <Box>
@@ -92,13 +126,13 @@ const Community = () => {
             <Box className="img">
               <img src={personImg} alt="" />
             </Box>
-            <Typography className='text'>
+            <Typography className="text">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </Typography>
           </Box>
           <Box className="footer">
             <Box>
-              <span className='icon'>
+              <span className="icon">
                 {/* Heart ICON */}
                 <svg
                   width={24}
@@ -117,7 +151,10 @@ const Community = () => {
                 </svg>
                 <span>2.5K</span>
               </span>
-              <span className='icon' onClick={() => setShowBottomSheet(!showBottomSheet)}>
+              <span
+                className="icon"
+                onClick={() => setShowBottomSheet(!showBottomSheet)}
+              >
                 {/* Comment ICON */}
                 <svg
                   width={24}
@@ -137,7 +174,7 @@ const Community = () => {
                 <span>3.1K</span>
               </span>
             </Box>
-            <Box sx={{ flex: 1, textAlign: 'end' }}>
+            <Box sx={{ flex: 1, textAlign: "end" }}>
               <svg
                 width={19}
                 height={19}
@@ -150,24 +187,24 @@ const Community = () => {
                   fill="#2C4364"
                 />
               </svg>
-
             </Box>
           </Box>
         </Box>
 
         <Box className="card">
           <Box className="header">
-            <Box className='profile'>
+            <Box className="profile">
               <Box className="avatar">
-                <img src={'https://images.pexels.com/photos/8420889/pexels-photo-8420889.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'} alt="" />
+                <img
+                  src={
+                    "https://images.pexels.com/photos/8420889/pexels-photo-8420889.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                  }
+                  alt=""
+                />
               </Box>
               <Box>
-                <Typography className='name'>
-                  Nandana
-                </Typography>
-                <Typography className='date'>
-                  25d
-                </Typography>
+                <Typography className="name">Nandana</Typography>
+                <Typography className="date">25d</Typography>
               </Box>
             </Box>
             <Box>
@@ -178,13 +215,13 @@ const Community = () => {
             <Box className="img">
               <img src={personImg} alt="" />
             </Box>
-            <Typography className='text'>
+            <Typography className="text">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </Typography>
           </Box>
           <Box className="footer">
             <Box>
-              <span className='icon'>
+              <span className="icon">
                 {/* Heart ICON */}
                 <svg
                   width={24}
@@ -203,7 +240,7 @@ const Community = () => {
                 </svg>
                 <span>2.5K</span>
               </span>
-              <span className='icon'>
+              <span className="icon">
                 {/* Comment ICON */}
                 <svg
                   width={24}
@@ -223,7 +260,7 @@ const Community = () => {
                 <span>3.1K</span>
               </span>
             </Box>
-            <Box sx={{ flex: 1, textAlign: 'end' }}>
+            <Box sx={{ flex: 1, textAlign: "end" }}>
               <svg
                 width={19}
                 height={19}
@@ -236,14 +273,15 @@ const Community = () => {
                   fill="#2C4364"
                 />
               </svg>
-
             </Box>
           </Box>
         </Box>
       </Box>
-      <NavLink className={'btn primary fab'} to={'#!'}>Create a Post</NavLink>
+      <NavLink className={"btn primary fab"} to={"#!"}>
+        Create a Post
+      </NavLink>
     </Layout>
-  )
-}
+  );
+};
 
-export default Community
+export default Community;

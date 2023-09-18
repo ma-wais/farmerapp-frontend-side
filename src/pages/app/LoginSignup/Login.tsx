@@ -2,14 +2,14 @@ import React from "react";
 import Layout from "./Layout";
 import { Box, Typography } from "@mui/material";
 import { NavLink, useNavigate } from "react-router-dom";
-import Input from "../../components/app/Input";
-import Select from "../../components/app/Select";
+import Input from "../../../components/app/Input";
+import Select from "../../../components/app/Select";
 import { MdPassword } from "react-icons/md";
-import AuthService from "../../service/Auth.ts";
-import { store } from "../../redux/store.js";
-import { data } from "../../redux/auth/actions.js";
+import AuthService from "../../../service/Auth.ts";
+import { store } from "../../../redux/store.ts";
+import { data } from "../../../redux/auth/actions.ts";
 import Cookies from "js-cookie";
-import { URL_PREFIX } from "../../App.js";
+import { URL_PREFIX } from "../../../App.tsx";
 const Login: React.FC = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = React.useState({
