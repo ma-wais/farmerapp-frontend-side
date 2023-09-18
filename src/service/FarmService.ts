@@ -20,7 +20,7 @@ class Farm {
     return this.api.get("/" );
   }
   getSingleFarm({farmId=''}) {
-    return this.api.get("/",{params:{farmId}} );
+    return this.api.get("/single/"+farmId );
   }
   deleteFarm({farmId=''}) {
     return this.api.delete("/",{params:{farmId}} );

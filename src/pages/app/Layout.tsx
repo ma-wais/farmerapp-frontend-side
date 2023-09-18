@@ -19,7 +19,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
           <BottomNav />
         </>
       )}
-      {props?.children}
+      <span style={{ paddingBottom: "100px" }}>{props?.children}</span>
     </Box>
   );
 };

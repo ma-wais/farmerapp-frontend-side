@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import Layout from "./Layout";
 import Profile from "../../assets/img/advisory/profile.svg";
-import { useState } from "react";
+
 import YChill from "../../assets/img/advisory/Frame.png";
 import Capsicum from "../../assets/img/advisory/capsicum (1) 3.png";
 import Carrot from "../../assets/img/advisory/carrot.png";
@@ -11,11 +11,28 @@ import Mango from "../../assets/img/advisory/mango 3.png";
 import Onion from "../../assets/img/advisory/onoin.png";
 import Radish from "../../assets/img/advisory/radish 3.png";
 import Tomato from "../../assets/img/advisory/tomato 4.png";
-import { NavLink } from "react-router-dom";
 
+import {
+  myWidget,
+  myWidgetTwo,
+} from "../../components/ImageUploader/uploadwidget.js";
+import FarmService from "../../service/FarmService.js";
+import { useSelector } from "react-redux";
+import { selectUser } from "../../redux/auth/selectors.js";
+import { useState } from "react";
+import { toast } from "react-toastify";
+import { farmInterface } from "../../Interface/Farm.js";
+
+interface user {
+  _id: string;
+}
+interface widgets {
+  event: string;
+  info: { secure_url: string };
+}
 const RegisterFarm: React.FC = () => {
   const [selectedCrop, setSelectedCrop] = useState<string>("");
-
+  const user: user = useSelector(selectUser);
   const crops = [
     { name: "Tomato", image: Tomato },
     { name: "Brinjal", image: eggPlant },
@@ -27,41 +44,88 @@ const RegisterFarm: React.FC = () => {
     { name: "Mushrooms", image: Onion },
     { name: "Radish", image: Radish },
   ];
+  const [formData, setFromData] = useState<farmInterface>({
+    image: [],
+    name: "",
+    location: "",
+    pincode: "",
+    maincrop: selectedCrop,
+
+    owner: user?._id || "",
+  });
   const toggleCropSelection = (cropName: string) => {
-    setSelectedCrop(selectedCrop === cropName ? "" : cropName);
+    setSelectedCrop((prev) => (prev === cropName ? "" : cropName));
+    setFromData((prev) => ({ ...prev, maincrop: cropName }));
   };
 
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (formData.image.length === 0) {
+      toast.info("Images are required");
+      return;
+    } else if (formData.maincrop.length === 0) {
+      toast.info("Maincrop are required");
+      return;
+    } else if (formData.pincode.length === 0) {
+      toast.info("Pincode are required");
+      return;
+    } else if (formData.location.length === 0) {
+      toast.info("Geolocation are required");
+      return;
+    }
+    try {
+      await FarmService.createFarm({ ...formData });
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <Layout pageTitle="Register Farm" showUI goBack>
+      {" "}
       <Box>
         <p className="heading">Choose a Plot Icon</p>
         <div className="m40">
-        <input
+          <input
             type="file"
             id="myinput"
             accept="image/*;capture=camera"
             capture
             style={{ display: "none", visibility: "hidden" }}
-          />        
-        <label
+          />
+          <label
             htmlFor="myinput"
+            id="upload_widget_two"
             className="btn textSM primary textCenter"
             style={{ cursor: "pointer", margin: "10px 0 0 20px" }}
+            onClick={() =>
+              myWidgetTwo((e: widgets) => {
+                if (e?.event === "success") {
+                  setFromData((prev) => ({
+                    ...prev,
+                    image: [...prev.image, e.info.secure_url],
+                  }));
+                }
+              }).open()
+            }
           >
             Take a Photo
           </label>
 
-          <input
-            placeholder="Upload Screenshot"
-            id="imageinput"
-            type="file"
-            accept="image/*"
-            style={{ display: "none", visibility: "hidden" }}
-          />
           <label
             htmlFor="imageinput"
             className="btn textSM primary textCenter"
             style={{ cursor: "pointer", margin: "10px 0 0 20px" }}
+            id="upload_widget"
+            onClick={() =>
+              myWidget((e: widgets) => {
+                if (e?.event === "success") {
+                  setFromData((prev) => ({
+                    ...prev,
+                    image: [...prev.image, e.info.secure_url],
+                  }));
+                }
+              }).open()
+            }
           >
             From Gallery
           </label>
@@ -73,20 +137,48 @@ const RegisterFarm: React.FC = () => {
           <ul className="list radioList bordered p20">
             <li>
               <img src={Profile} alt="logo" />
-              <input className="input" placeholder="Plot Name" type="text" />
-            </li>
-            <li>
-              <img src={Profile} alt="logo" />
               <input
                 className="input"
-                placeholder="Plot Geolocation"
+                placeholder="Plot Name"
                 type="text"
+                value={formData.name}
+                onChange={(e) => {
+                  setFromData((prev: farmInterface) => ({
+                    ...prev,
+                    name: e.target.value,
+                  }));
+                }}
+                required
               />
             </li>
             <li>
               <img src={Profile} alt="logo" />
               <input
                 className="input"
+                placeholder="Plot Geolocation"
+                required
+                value={formData.location}
+                onChange={(e) => {
+                  setFromData((prev: farmInterface) => ({
+                    ...prev,
+                    location: e.target.value,
+                  }));
+                }}
+                type="text"
+              />
+            </li>
+            <li>
+              <img src={Profile} alt="logo" />
+              <input
+                required
+                className="input"
+                value={formData.pincode}
+                onChange={(e) => {
+                  setFromData((prev: farmInterface) => ({
+                    ...prev,
+                    pincode: e.target.value,
+                  }));
+                }}
                 placeholder="Plot Pin Code"
                 type="text"
               />
@@ -94,7 +186,7 @@ const RegisterFarm: React.FC = () => {
           </ul>
         </form>
       </Box>
-      <Box className="p40">
+      <Box className="p40 " margin={"10px"}>
         <p className="heading">Main Crop</p>
         <div
           style={{
@@ -136,42 +228,14 @@ const RegisterFarm: React.FC = () => {
           ))}
         </div>
       </Box>
-
-      <p className="heading p40">Inter Crop</p>
-      <p className="heading p40">Is your main crop same as your Inter Crop</p>
-      <Box className="tabs" sx={{ marginTop: "40px" }}>
-        <button
-          style={{
-            backgroundColor: "#fff",
-            width: "48%",
-            borderRadius: "10px",
-            border: "none",
-            height: "40px",
-            marginLeft: "5px",
-          }}
-          onClick={() => {}}
-        >
-          Yes
-        </button>
-        <button
-          style={{
-            width: "48%",
-            borderRadius: "10px",
-            border: "none",
-            height: "40px",
-            marginLeft: "5px",
-          }}
-        >
-          No
-        </button>
-      </Box>
-      <NavLink
-        to={"/app/advisory/farms"}
+      <button
+        type="button"
+        onClick={handleSubmit}
         className={"btn primary block"}
         style={{ marginBottom: "100px" }}
       >
         Proceed
-      </NavLink>
+      </button>
     </Layout>
   );
 };

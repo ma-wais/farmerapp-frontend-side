@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
@@ -16,11 +16,13 @@
     "@mui/material": "^5.14.8",
     "@mui/x-date-pickers": "^6.13.0",
     "axios": "^1.5.0",
+    "cloudinary": "^1.40.0",
     "date-fns": "^2.30.0",
     "dayjs": "^1.11.9",
     "js-cookie": "^3.0.5",
     "jwt-decode": "^3.1.2",
     "react": "^18.2.0",
+    "react-cloudinary-upload-widget": "^2.0.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.11.0",
     "react-persist": "^1.0.2",
