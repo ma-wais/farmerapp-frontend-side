@@ -3,6 +3,7 @@ import { FC } from "react";
 import Layout from "../../../components/app/Layout";
 import { Box, Typography } from "@mui/material";
 import logo from "../../../assets/img/app/logo_bg.svg";
+import { URL_PREFIX } from "../../../App";
 
 const Schedule: FC = () => {
   return (
@@ -16,7 +17,7 @@ const Schedule: FC = () => {
         and soil culture. Get your crop schedule now!
       </Typography>
       <NavLink
-        to={"#!"}
+        to={`/${URL_PREFIX}/advisory/bookConsultation`}
         className={"btn primary block"}
         style={{ marginTop: "20px" }}
       >

@@ -1,11 +1,20 @@
-import Layout from "../../components/app/Layout";
+import React from "react";
+import Layout from "../../../components/app/Layout";
+
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
 import Typography from "@mui/material/Typography";
 import { NavLink } from "react-router-dom";
 import { toast } from "react-toastify";
+import { SingleInputTimeRangeField } from "@mui/x-date-pickers-pro/SingleInputTimeRangeField";
+import { DateRange } from "@mui/x-date-pickers-pro/internals/models";
+import dayjs, { Dayjs } from "dayjs";
 const BasicDateCalendar: React.FC = () => {
+  const [value, setValue] = React.useState<DateRange<Dayjs>>(() => [
+    dayjs("2022-04-17T15:30"),
+    dayjs("2022-04-17T18:30"),
+  ]);
   return (
     <Layout showUI goBack pageTitle="Book Consultation">
       <div className="bgWhite">
@@ -36,33 +45,19 @@ const BasicDateCalendar: React.FC = () => {
       >
         Submit
       </NavLink>
-      <div className="p40 layout ">
-        <p
-          className="textMD textDark"
-          style={{
-            marginLeft: "10px",
-            borderRadius: "10px",
-            border: "1px solid #ccc",
-            padding: "15px 6px",
-          }}
-        >
-          03:00 pm - 04:00pm
-        </p>
-        <p
-          className="textMD textDark"
-          style={{
-            marginLeft: "20px",
-            borderRadius: "10px",
-            border: "1px solid #ccc",
-            padding: "15px 6px",
-          }}
-        >
-          03:00 pm - 04:00pm
-        </p>
-      </div>
-      <div className="p40 layout">
-        <p>03:00 pm - 04:00pm</p>
-        <p>03:00 pm - 04:00pm</p>
+      <div className="p40 layout time-selector" style={{ gap: "1rem" }}>
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <SingleInputTimeRangeField
+            value={value}
+            onChange={(newValue) => setValue(newValue)}
+          />
+        </LocalizationProvider>
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <SingleInputTimeRangeField
+            value={value}
+            onChange={(newValue) => setValue(newValue)}
+          />
+        </LocalizationProvider>
       </div>
     </Layout>
   );

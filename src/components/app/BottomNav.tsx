@@ -20,7 +20,7 @@ const BottomNav = () => {
           <span>my farm</span>
         </NavLink>
         <div className="active">
-          <NavLink to={`/${URL_PREFIX}/advisory/`}>
+          <NavLink to={`/${URL_PREFIX}/advisory/schedule`}>
             <img src={chat} alt="" />
           </NavLink>
         </div>

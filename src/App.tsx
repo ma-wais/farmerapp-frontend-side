@@ -27,7 +27,7 @@ import AdvisoryPlan from "./pages/app/Advisory/AdvisoryPlan";
 import Payment from "./pages/app/Advisory/Payment";
 import QRCode from "./pages/app/Advisory/QRCode";
 import QRinfo from "./pages/app/Advisory/QRinfo";
-import ConsultationDate from "./pages/app/ConsultationDate";
+import ConsultationDate from "./pages/app/Advisory/ConsultationDate";
 import AdvisoryReview from "./pages/app/Advisory/AdvisoryReview";
 import Successful from "./pages/app/Advisory/Successful";
 {

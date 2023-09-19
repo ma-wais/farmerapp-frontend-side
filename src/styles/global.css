@@ -177,3 +177,13 @@ button {
 .Toastify__close-button {
   margin: auto !important;
 }
+.time-selector .MuiInputBase-input {
+  padding: 10px !important;
+  text-align: center !important;
+  font-weight: 600 !important;
+  font-size: 11px !important;
+  text-transform: lowercase !important;
+}
+.time-selector .MuiInputBase-root {
+  border-radius: 12px !important;
+}

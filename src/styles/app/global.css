@@ -223,4 +223,5 @@
 .MuiDateCalendar-root {
   border: 1px solid #e4e5e7 !important;
   border-radius: 13px;
+  width: 100% !important;
 }

@@ -38,31 +38,42 @@ const Schedule: FC = () => {
               className="layout m20 flexRow"
               style={{
                 borderRadius: "10px",
+                alignItems: "center",
                 border: "1px solid rgb(200,200,200)",
+                justifyContent: "space-between",
               }}
             >
-              <div
-                style={backGroundSetter(item.image[0], {
-                  width: "25%",
-                  borderRadius: "10px",
-                  padding: "10px",
-                })}
-              ></div>
-              <div
-                style={{
-                  width: "50%",
-                  display: "inline-block",
-                  padding: "8px 0 10px 10px",
-                }}
-              >
-                <h2 className="textMD">{item.name}</h2>
-                <h3 style={{ padding: "8px 0 5px 0px" }}>{item.maincrop}</h3>
-                <h3>{item.location}</h3>
+              <div className="flex flexRow">
+                <div
+                  style={backGroundSetter(item.image[0], {
+                    width: "50px",
+                    margin: "auto 10px",
+                    borderRadius: "10px",
+
+                    padding: "10px",
+                    height: "50px",
+                  })}
+                ></div>
+                <div
+                  style={{
+                    display: "inline-block",
+                    padding: "8px 0 10px 10px",
+                    fontSize: "10px",
+                  }}
+                >
+                  <h2 className="textMD">{item.name}</h2>
+                  <h3>{item.maincrop}</h3>
+                  <h3>{item.location}</h3>
+                </div>
               </div>
               <NavLink
                 to={"/app/advisory/payment/consultationdate"}
                 className={"btn primary"}
-                style={{ height: "70%", width: "40%", margin: "5% 20px 0 0" }}
+                style={{
+                  width: "140px",
+                  margin: "auto 10px",
+                  fontSize: "11px",
+                }}
               >
                 Ask Advise
               </NavLink>
@@ -75,10 +86,10 @@ const Schedule: FC = () => {
         <div
           style={{
             backgroundColor: "#FFECD6",
-            width: "30%",
+            width: "50%",
             height: "80px",
             borderRadius: "10px",
-            minWidth: "60px",
+            minWidth: "100px",
           }}
         >
           <img
@@ -98,6 +109,7 @@ const Schedule: FC = () => {
       <button
         onClick={() => navigate("/app/advisory/payment/consultationdate")}
         className={"btn primary m20"}
+        style={{ width: "100%" }}
       >
         Book Consultation
       </button>
