@@ -67,6 +67,7 @@ import MyOrders from "./pages/app/ECommerse/MyOrders";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { selectUser } from "./redux/auth/selectors";
+import FarmService from "./service/FarmService";
 export const URL_PREFIX = "app";
 const App: React.FC = () => {
   const user = useSelector(selectUser);
@@ -88,6 +89,18 @@ const App: React.FC = () => {
     ];
     if (!user && !allowedRoutes.includes(path)) {
       navigate("/app/login");
+    } else if (
+      path.includes("advisory") ||
+      path.includes("cropschedule") ||
+      path.includes("plot")
+    ) {
+      FarmService.getFarm()
+        .then(({ data }) => {
+          if (data.farm.length === 0) {
+            navigate("/app/haventregisterfarm");
+          }
+        })
+        .catch((err) => console.log(err));
     }
   }, [user, path, navigate]);
   return (
@@ -120,12 +133,9 @@ const App: React.FC = () => {
       />
 
       {/* Advisory */}
-      <Route path={`/${URL_PREFIX}/advisory`} Component={Advisory} />
-      <Route
-        path={`/${URL_PREFIX}/advisory/registerFarm`}
-        Component={RegisterFarm}
-      />
-      <Route path={`/${URL_PREFIX}/advisory/farms`} Component={Farms} />
+      <Route path={`/${URL_PREFIX}/haventregisterfarm`} Component={Advisory} />
+      <Route path={`/${URL_PREFIX}/registerFarm`} Component={RegisterFarm} />
+      <Route path={`/${URL_PREFIX}/farms`} Component={Farms} />
       <Route path={`/${URL_PREFIX}/advisory/schedule`} Component={Schedule} />
       <Route
         path={`/${URL_PREFIX}/advisory/bookConsultation`}

@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "./Layout";
+import Layout from "../../../components/app/Layout";
 import { RiSearch2Line } from "react-icons/ri";
 import { NavLink } from "react-router-dom";
 import Arrow from "../../../assets/img/app/Arrow 2.svg";

@@ -1,6 +1,6 @@
 export interface AUTHSTATE{
     auth:{
-        user:object,
+        user:{_id:string,email:string,name:string,image:string,phone:string},
         otpdata:object,
         loading:boolean
 

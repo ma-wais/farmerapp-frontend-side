@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import { FC } from "react";
 import { Box, Typography } from "@mui/material";
 import logo from "../../../assets/img/advisory/Group 770581.svg";
-import Layout from "./Layout";
+import Layout from "../../../components/app/Layout";
 
 const PlotAdvisory: FC = () => {
   return (

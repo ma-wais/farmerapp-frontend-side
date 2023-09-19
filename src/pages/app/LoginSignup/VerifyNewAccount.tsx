@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Layout from "../Layout.tsx";
+import Layout from "../../../components/app/Layout.tsx";
 import { Box, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import Input from "../../../components/app/Input.tsx";

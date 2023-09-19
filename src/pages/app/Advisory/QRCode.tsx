@@ -1,5 +1,5 @@
 import { Typography } from "@mui/material";
-import Layout from "./Layout";
+import Layout from "../../../components/app/Layout";
 import { NavLink } from "react-router-dom";
 import four from "../../../assets/img/advisory/QRcode.svg";
 

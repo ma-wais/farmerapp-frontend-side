@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Layout from "./Layout";
+import Layout from "../../../components/app/Layout";
 
 import Arrow from "../../../assets/img/app/Arrow 2.svg";
 import { NavLink, useNavigate } from "react-router-dom";

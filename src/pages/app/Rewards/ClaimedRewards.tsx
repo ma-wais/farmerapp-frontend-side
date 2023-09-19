@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "./Layout";
+import Layout from "../../../components/app/Layout";
 import one from "../../../assets/img/advisory/background.svg";
 import { NavLink } from "react-router-dom";
 import Arrow from "../../../assets/img/advisory/ArrowGo.svg";

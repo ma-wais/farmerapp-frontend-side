@@ -1,5 +1,5 @@
 import Input from "../../../components/app/Input";
-import Layout from "./Layout";
+import Layout from "../../../components/app/Layout";
 
 const QRinfo: React.FC = () => {
   return (

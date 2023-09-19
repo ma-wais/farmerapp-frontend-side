@@ -1,4 +1,4 @@
-import Layout from "./Layout";
+import Layout from "../../../components/app/Layout";
 import item from "../../../assets/img/advisory/itemPF.svg";
 import product from "../../../assets/img/advisory/product.svg";
 import { NavLink } from "react-router-dom";

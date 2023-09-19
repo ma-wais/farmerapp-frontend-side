@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "./Layout";
+import Layout from "../../../components/app/Layout";
 import hoe from "../../../assets/img/advisory/hoe.svg";
 import veg from "../../../assets/img/advisory/vegshop.svg";
 import { RiSearch2Line } from "react-icons/ri";

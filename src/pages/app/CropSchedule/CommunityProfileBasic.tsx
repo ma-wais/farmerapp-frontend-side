@@ -1,6 +1,6 @@
 import "../../../styles/app/page/ConnectionsProfile.css";
 import { FC } from "react";
-import Layout from "./Layout";
+import Layout from "../../../components/app/Layout";
 import { Box } from "@mui/material";
 import profileBG from "../../../assets/img/app/profile_bg.png";
 import profileImg from "../../../assets/img/advisory/karna.svg";

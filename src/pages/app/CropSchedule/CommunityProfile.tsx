@@ -1,6 +1,6 @@
 import "../../../styles/app/page/ConnectionsProfile.css";
 import { FC } from "react";
-import Layout from "./Layout";
+import Layout from "../../../components/app/Layout";
 import { Box, Typography } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import Arrow from "../../../assets/img/advisory/notifImg.svg";

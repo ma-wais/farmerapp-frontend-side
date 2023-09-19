@@ -5,21 +5,22 @@ import silo from "../../assets/icons/silo.svg";
 import chat from "../../assets/icons/chat.svg";
 import education from "../../assets/icons/education.svg";
 import pars from "../../assets/icons/pars.svg";
+import { URL_PREFIX } from "../../App";
 
 const BottomNav = () => {
   return (
     <div className="bottomNav">
       <div className="items">
-        <NavLink to={"#!"}>
+        <NavLink to={`/${URL_PREFIX}/`}>
           <img src={home} alt="" />
           <span>home</span>
         </NavLink>
-        <NavLink to={"#!"}>
+        <NavLink to={`/${URL_PREFIX}/farms`}>
           <img src={silo} alt="" />
           <span>my farm</span>
         </NavLink>
         <div className="active">
-          <NavLink to={"#!"}>
+          <NavLink to={`/${URL_PREFIX}/advisory/`}>
             <img src={chat} alt="" />
           </NavLink>
         </div>

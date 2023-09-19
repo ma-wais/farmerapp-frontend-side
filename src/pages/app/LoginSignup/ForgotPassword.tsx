@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "./Layout";
+import Layout from "../../../components/app/Layout";
 import { Box, Typography } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import Input from "../../../components/app/Input";

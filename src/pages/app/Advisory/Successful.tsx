@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Box, Typography } from "@mui/material";
-import Layout from "./Layout";
+import Layout from "../../../components/app/Layout";
 import logo from "../../../assets/img/advisory/Vector.svg";
 import { NavLink } from "react-router-dom";
 import "../../../styles/app/page/advisory.css";

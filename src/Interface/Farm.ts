@@ -5,4 +5,6 @@ export interface farmInterface {
     maincrop: string;
     pincode: string;
     owner: string;
+    shedule:[],
+    _id:string|undefined;
   }

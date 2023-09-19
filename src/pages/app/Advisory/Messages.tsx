@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import Layout from "./Layout";
+import Layout from "../../../components/app/Layout";
 import Input from "../../../components/app/Input";
 import SimpleInput from "../../../components/app/SimpleInput";
 import { Box, Typography } from "@mui/material";

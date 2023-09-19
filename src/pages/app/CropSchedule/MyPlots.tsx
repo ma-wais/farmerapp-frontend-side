@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Layout from "../Layout";
+import Layout from "../../../components/app/Layout";
 // import YChill from "../../../assets/img/app/profile_bg.png";
 import FarmService from "../../../service/FarmService";
 import { Box, Typography } from "@mui/material";

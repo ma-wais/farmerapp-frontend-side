@@ -3,32 +3,41 @@ import jwt_decode from "jwt-decode";
 import { logout, setLoading } from "../redux/auth/actions";
 import { store } from "../redux/store";
 import { toast } from "react-toastify";
-import {  AxiosResponse } from "axios";
-
-export const middleField = (api) => {
+import axios, {   AxiosError, AxiosHeaders, AxiosInstance, AxiosResponse } from "axios";
+interface Decode{
+  iss:string;
+sub:string;
+aud:string;
+iat:number;
+exp:number;
+}
+export const middleField = (api:AxiosInstance|AxiosHeaders) => {
   api.interceptors.response.use(
     (response:AxiosResponse) => {
       store.dispatch(setLoading(false));
       if (response?.data?.message) toast.success(response.data.message);
       return response;
     },
-    (error:any) => {
+    (error:Error | AxiosError) => {
       store.dispatch(setLoading(false));
-      const { response } = error;
-      if (response) {
-        const { data } = response;
-        if (data && data.message) {
-          if (
-            data.message === "Invalid access_token" ||
-            data.message?.toLowerCase?.() === "jwt must be provided"
-          ) {
-            store.dispatch(logout());
-            window.location.href = "/";
-            return;
+      if (axios.isAxiosError(error))  {
+        const { response } = error;
+        if (response) {
+          const { data } = response;
+          if (data && data.message) {
+            if (
+              data.message === "Invalid access_token" ||
+              data.message?.toLowerCase?.() === "jwt must be provided"
+            ) {
+              store.dispatch(logout());
+              window.location.href = "/";
+              return;
+            }
+  
+            toast.error(data.message);
           }
-
-          toast.error(data.message);
         }
+
       }
       return Promise.reject(error);
     }
@@ -58,7 +67,7 @@ export const middleField = (api) => {
       let refresh_token = Cookies.get("refreshToken");
 
       if (access_token) {
-        const decodedToken = jwt_decode(access_token);
+        const decodedToken:Decode = jwt_decode(access_token);
         if (5000 + (decodedToken?.exp) * 1000 <= Date.now()) {
           const result = await refresh({
             accessToken: access_token,

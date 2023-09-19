@@ -1,10 +1,10 @@
-import Layout from "./Layout";
+import Layout from "../../components/app/Layout";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
 import Typography from "@mui/material/Typography";
 import { NavLink } from "react-router-dom";
-
+import { toast } from "react-toastify";
 const BasicDateCalendar: React.FC = () => {
   return (
     <Layout showUI goBack pageTitle="Book Consultation">
@@ -32,6 +32,7 @@ const BasicDateCalendar: React.FC = () => {
         to={"#!"}
         className={"btn primary block"}
         style={{ marginTop: "20px" }}
+        onClick={() => toast.success("Successfully Submitted")}
       >
         Submit
       </NavLink>

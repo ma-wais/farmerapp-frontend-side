@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from "react";
-import Layout from "./Layout";
+import Layout from "../../../components/app/Layout";
 
 import { NavLink, useNavigate } from "react-router-dom";
 import Call from "../../../assets/img/advisory/Group 770502.png";
@@ -15,18 +15,7 @@ const Schedule: FC = () => {
       ...morestyles,
     };
   };
-  const call = [
-    {
-      name: "Crop Related Problem",
-      crop: "11-9-2023",
-      time: "11:00 -12:00pm",
-    },
-    {
-      name: "Crop Related Problem",
-      crop: "11-9-2023",
-      time: "11:00 -12:00pm",
-    },
-  ];
+
   const [farms, setFarms] = useState<farmInterface[]>([]);
   const getFarms = async () => {
     FarmService.getFarm().then(({ data }) => {
@@ -71,7 +60,7 @@ const Schedule: FC = () => {
                 <h3>{item.location}</h3>
               </div>
               <NavLink
-                to={"#!"}
+                to={"/app/advisory/payment/consultationdate"}
                 className={"btn primary"}
                 style={{ height: "70%", width: "40%", margin: "5% 20px 0 0" }}
               >
@@ -113,8 +102,8 @@ const Schedule: FC = () => {
         Book Consultation
       </button>
       <p className="heading p40">Upcoming Calls</p>
-      <div>
-        {call.map((item) => {
+      <div style={{ textAlign: "center", margin: "1rem" }}>
+        {/* {call.map((item) => {
           return (
             <div
               className="layout m20 flexRow contentBetween"
@@ -143,7 +132,8 @@ const Schedule: FC = () => {
               </NavLink>
             </div>
           );
-        })}
+        })} */}
+        No Upcomming calls yet
       </div>
     </Layout>
   );

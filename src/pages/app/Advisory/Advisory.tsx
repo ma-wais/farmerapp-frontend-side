@@ -1,13 +1,13 @@
 import { FC } from "react";
 import { Box, Typography } from "@mui/material";
-import Layout from "../Layout";
+import Layout from "../../../components/app/Layout";
 import logo from "../../../assets/img/app/logo_bg.svg";
 import { NavLink } from "react-router-dom";
 import "../../../styles/app/page/advisory.css";
 
 const Advisory: FC = () => {
   return (
-    <Layout pageTitle="Advisory" showUI>
+    <Layout pageTitle="Farm" showUI>
       <Box className="textCenter">
         <img src={logo} alt="logo" />
       </Box>
@@ -19,7 +19,7 @@ const Advisory: FC = () => {
         your farm and crops that are grown.
       </Typography>
       <NavLink
-        to={"/app/advisory/registerFarm"}
+        to={"/app/registerFarm"}
         className={"btn primary block"}
         style={{ marginTop: "20px" }}
       >

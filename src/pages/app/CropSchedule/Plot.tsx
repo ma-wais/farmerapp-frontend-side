@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from "react";
-import YChill from "../../../assets/img/advisory/DefProfile.svg";
+// import YChill from "../../../assets/img/advisory/DefProfile.svg";
 import Arrow from "../../../assets/img/advisory/arrowback.svg";
 import palak from "../../../assets/img/advisory/Frame.svg";
 import Chev from "../../../assets/img/advisory/Chev Icon.svg";
-import ArrowUp from "../../../assets/img/advisory/ArrowUp.svg";
-import ArrowDown from "../../../assets/img/advisory/ArrowDown.svg";
+// import ArrowUp from "../../../assets/img/advisory/ArrowUp.svg";
+// import ArrowDown from "../../../assets/img/advisory/ArrowDown.svg";
 import { useNavigate, useParams } from "react-router-dom";
 import { farmInterface } from "../../../Interface/Farm";
 import FarmService from "../../../service/FarmService";
 
 const Plot = () => {
-  const [activeQuestion, setActiveQuestion] = React.useState<number>(0);
+  // const [activeQuestion, setActiveQuestion] = React.useState<number>(0);
 
-  const toggleQuestion = (questionNumber: number) => {
-    setActiveQuestion(activeQuestion === questionNumber ? 0 : questionNumber);
-  };
+  // const toggleQuestion = (questionNumber: number) => {
+  //   setActiveQuestion(activeQuestion === questionNumber ? 0 : questionNumber);
+  // };
   const navigate = useNavigate();
   const { farmId } = useParams();
   const [farm, setFarm] = useState<farmInterface>({
@@ -24,6 +24,8 @@ const Plot = () => {
     maincrop: "",
     pincode: "",
     owner: "",
+    _id: "",
+    shedule: [],
   });
   useEffect(() => {
     FarmService.getSingleFarm({ farmId }).then(({ data }) => {
@@ -81,7 +83,7 @@ const Plot = () => {
 
       <p className="heading p20 ml20">Followed Practices</p>
       <div className="about">
-        <article className="schedule">
+        {/* <article className="schedule">
           <aside
             className="layout contentBetween"
             onClick={() => toggleQuestion(1)}
@@ -134,7 +136,10 @@ const Plot = () => {
             volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna
             fringilla urna porttitor rhoncus dolor purus non.
           </p>
-        </article>
+        </article> */}
+        <div style={{ textAlign: "center", margin: "1rem" }}>
+          No Practices added yet
+        </div>
       </div>
     </div>
   ) : (

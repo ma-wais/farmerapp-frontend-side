@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "./Layout";
+import Layout from "../../../components/app/Layout";
 import Bronze from "../../../assets/img/advisory/Bronze.svg";
 import gold from "../../../assets/img/advisory/GoldMedal.svg";
 

@@ -1,5 +1,5 @@
 import { FC } from "react";
-import Layout from "./Layout";
+import Layout from "../../../components/app/Layout";
 import { NavLink } from "react-router-dom";
 import diamond from "../../../assets/img/advisory/Group 99.svg";
 

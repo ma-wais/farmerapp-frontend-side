@@ -1,11 +1,7 @@
-import Layout from './Layout'
+import Layout from "../../components/app/Layout";
 
 const Home = () => {
-  return (
-    <Layout showUI showIcons>
+  return <Layout showUI showIcons></Layout>;
+};
 
-    </Layout>
-  )
-}
-
-export default Home
+export default Home;

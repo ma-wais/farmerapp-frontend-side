@@ -1,14 +1,12 @@
-import React from 'react'
-import Layout from './Layout'
+import React from "react";
+import Layout from "../../../components/app/Layout";
 
-
-const CreatePost:React.FC = () => {
+const CreatePost: React.FC = () => {
   return (
-    <Layout showUI goBack pageTitle='Create Post'>
-
-      
+    <Layout showUI goBack pageTitle="Create Post">
+      <></>
     </Layout>
-  )
-}
+  );
+};
 
-export default CreatePost
+export default CreatePost;

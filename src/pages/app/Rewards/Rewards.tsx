@@ -1,4 +1,4 @@
-import Layout from "../Layout";
+import Layout from "../../../components/app/Layout";
 import Bronze from "../../../assets/img/advisory/Bronze.svg";
 import coins from "../../../assets/img/advisory/coins.svg";
 import gold from "../../../assets/img/advisory/gold.svg";

@@ -1,4 +1,4 @@
-import Layout from "./Layout";
+import Layout from "../../../components/app/Layout";
 import { RiSearch2Line } from "react-icons/ri";
 import product from "../../../assets/img/advisory/hoe.svg";
 import motor from "../../../assets/img/advisory/motor.svg";

@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "./Layout";
+import Layout from "../../../components/app/Layout";
 import Arrow from "../../../assets/img/advisory/notifImg.svg";
 import diamond from "../../../assets/img/advisory/notif 1.svg";
 import diamond2 from "../../../assets/img/advisory/notif 2.svg";

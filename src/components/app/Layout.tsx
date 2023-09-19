@@ -1,10 +1,10 @@
 import { Box } from "@mui/material";
 import React from "react";
-import "../../../styles/app/global.css";
-import Navbar from "../../../components/app/Navbar";
-import BottomNav from "../../../components/app/BottomNav";
-import Sidebar from "../../../components/app/Sidebar";
-import { LayoutProps } from "../../../props";
+import "../../styles/app/global.css";
+import Navbar from "./Navbar";
+import BottomNav from "./BottomNav";
+import Sidebar from "./Sidebar";
+import { LayoutProps } from "../../props";
 
 const Layout: React.FC<LayoutProps> = (props) => {
   return (
@@ -19,7 +19,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
           <BottomNav />
         </>
       )}
-      {props?.children}
+      <span style={{ paddingBottom: "100px" }}>{props?.children}</span>
     </Box>
   );
 };

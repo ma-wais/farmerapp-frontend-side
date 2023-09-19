@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "./Layout";
+import Layout from "../../components/app/Layout";
 import { Box, Typography } from "@mui/material";
 import image from "../../assets/img/app/onboarding_img.svg";
 import { ProgressBar } from "../../components/app/ProgressBar";

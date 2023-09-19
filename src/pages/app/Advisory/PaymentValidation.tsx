@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import Layout from "./Layout";
+import Layout from "../../../components/app/Layout";
 import diamond from "../../../assets/img/advisory/Group 99.svg";
 import Arrow from "../../../assets/img/app/Arrow 2.svg";
 import Profile from "../../../assets/img/advisory/fileUpload.svg";

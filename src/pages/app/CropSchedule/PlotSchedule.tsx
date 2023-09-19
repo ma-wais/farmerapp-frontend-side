@@ -1,4 +1,4 @@
-import Layout from "./Layout";
+import Layout from "../../../components/app/Layout";
 import ArrowLeft from "../../../assets/img/advisory/ArrowLeft.svg";
 import ArrowRight from "../../../assets/img/advisory/ArrowRight.svg";
 // import ArrowGo from '../../../assets/img/advisory/ArrowGo.svg'

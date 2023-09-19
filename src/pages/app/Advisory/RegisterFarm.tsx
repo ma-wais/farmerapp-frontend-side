@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import Layout from "./Layout";
+import Layout from "../../../components/app/Layout.js";
 import Profile from "../../../assets/img/advisory/profile.svg";
 
 import YChill from "../../../assets/img/advisory/Frame.png";
@@ -21,9 +21,10 @@ import { useSelector } from "react-redux";
 import { selectUser } from "../../../redux/auth/selectors.js";
 import { useState } from "react";
 import { toast } from "react-toastify";
+import { farmInterface } from "../../../Interface/Farm.js";
 
-interface user {
-  _id: string;
+interface USER {
+  _id: string | undefined;
 }
 interface widgets {
   event: string;
@@ -31,7 +32,7 @@ interface widgets {
 }
 const RegisterFarm: React.FC = () => {
   const [selectedCrop, setSelectedCrop] = useState<string>("");
-  const user: user = useSelector(selectUser);
+  const user: USER = useSelector(selectUser);
   const crops = [
     { name: "Tomato", image: Tomato },
     { name: "Brinjal", image: eggPlant },
@@ -51,6 +52,8 @@ const RegisterFarm: React.FC = () => {
     maincrop: selectedCrop,
 
     owner: user?._id || "",
+    _id: "",
+    shedule: [],
   });
   const toggleCropSelection = (cropName: string) => {
     setSelectedCrop((prev) => (prev === cropName ? "" : cropName));
